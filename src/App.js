@@ -7,3 +7,5 @@ function App() {
 }
 
 export default App;
+
+/* <div>Icons made by <a href="https://www.flaticon.com/aut */

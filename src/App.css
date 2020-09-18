@@ -1,3 +1,10 @@
 .App {
   text-align: center;
 }
+
+section {
+  display: block;
+  background-color: palegoldenrod;
+  height: 5rem;
+  width: 5rem;
+}
