@@ -6,6 +6,47 @@
   display: flex;
 }
 
+/* Homepage */
+#homepage {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+#homepage-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#logo {
+  position: relative;
+  height: 12rem;
+  width: 12rem;
+}
+
+#logo > * {
+  height: 100%;
+  width: 100%;
+}
+
+#logo > img {
+  object-fit: contain;
+}
+
+#logo > h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Other pages */
+
 #sidebar,
 #main-content {
   padding: 1rem;
