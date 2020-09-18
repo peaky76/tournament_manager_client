@@ -25,3 +25,14 @@
   height: 10rem;
   width: 20rem;
 }
+
+/* Forms */
+
+.form-input-field {
+  padding: 1rem 0;
+  display: flex;
+}
+
+.form-input-field > label {
+  width: 20%;
+}

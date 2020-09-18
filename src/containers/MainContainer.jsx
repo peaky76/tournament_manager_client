@@ -20,7 +20,7 @@ class MainContainer extends Component {
           <section id="main-content">
             <Switch>
               <Route path="/people" component={PersonContainer} />
-              <Route path="/people/new" component={PersonAddNewForm} />
+              <Route path="/people/new" component={ErrorPage} />
               <Route path="/teams" component={TeamContainer} />
               <Route path="/tournaments" component={TournamentContainer} />
               <Route component={ErrorPage} />
