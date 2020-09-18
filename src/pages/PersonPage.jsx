@@ -11,7 +11,7 @@ class PersonPage extends Component {
   render() {
     return (
       <div id="content-page" className="page">
-        <header id="page-header-content" class="page-header">
+        <header id="page-header-content" className="page-header">
           <PersonHeader />
         </header>
         <section id="sidebar">

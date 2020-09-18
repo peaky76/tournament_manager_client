@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Request from "../../helpers/request";
 
 class PersonCreateForm extends Component {
   constructor() {
@@ -10,6 +11,7 @@ class PersonCreateForm extends Component {
       dateOfBirth: null,
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handlePost = this.handlePost.bind(this);
   }
 
   handleChange(event) {
@@ -18,15 +20,23 @@ class PersonCreateForm extends Component {
     });
   }
 
+  handlePost() {
+    const request = new Request();
+    const person = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      nationality: this.state.nationality,
+      dateOfBirth: this.state.dateOfBirth,
+    };
+    request.post("/api/people", person).then((res) => console.log(res));
+    // .then(() => (window.location = "/people"));
+  }
+
   render() {
     return (
-      <form
-        id="form-person-create"
-        className="form-create"
-        onSubmit={this.handleSubmit}
-      >
+      <form id="form-person-create" className="form-create" onSubmit={this.handlePost}>
         <div className="form-input-field">
-          <label for="input-first-name">First name:</label>
+          <label htmlFor="input-first-name">First name:</label>
           <input
             type="text"
             id="input-first-name"
@@ -35,7 +45,7 @@ class PersonCreateForm extends Component {
           ></input>
         </div>
         <div className="form-input-field">
-          <label for="input-last-name">Last name:</label>
+          <label htmlFor="input-last-name">Last name:</label>
           <input
             type="text"
             id="input-last-name"
@@ -44,12 +54,8 @@ class PersonCreateForm extends Component {
           ></input>
         </div>
         <div className="form-input-field">
-          <label for="select-nationality">Nationality:</label>
-          <select
-            id="select-nationality"
-            name="nationality"
-            onChange={this.handleChange}
-          >
+          <label htmlFor="select-nationality">Nationality:</label>
+          <select id="select-nationality" name="nationality" onChange={this.handleChange}>
             <option value="England">England</option>
             <option value="France">France</option>
             <option value="Scotland">Scotland</option>
@@ -58,13 +64,8 @@ class PersonCreateForm extends Component {
           </select>
         </div>
         <div className="form-input-field">
-          <label for="input-dob">Date of birth:</label>
-          <input
-            type="date"
-            id="input-dob"
-            name="dateOfBirth"
-            onChange={this.handleChange}
-          />
+          <label htmlFor="input-dob">Date of birth:</label>
+          <input type="date" id="input-dob" name="dateOfBirth" onChange={this.handleChange} />
         </div>
         <button className="button-submit">Submit</button>
       </form>

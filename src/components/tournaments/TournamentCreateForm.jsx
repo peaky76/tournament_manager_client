@@ -11,13 +11,9 @@ class TournamentCreateForm extends Component {
   }
   render() {
     return (
-      <form
-        id="form-person-create"
-        className="form-create"
-        onSubmit={this.handleSubmit}
-      >
+      <form id="form-person-create" className="form-create" onSubmit={this.handleSubmit}>
         <div className="form-input-field">
-          <label for="select-sport">Select sport:</label>
+          <label htmlfor="select-sport">Select sport:</label>
           <select id="select-sport" name="sport" onChange={this.handleChange}>
             <option value="Football">Football</option>
             <option value="Rugby League">Rugby League</option>
@@ -26,7 +22,7 @@ class TournamentCreateForm extends Component {
           </select>
         </div>
         <div className="form-input-field">
-          <label for="input-tournament-name">Name:</label>
+          <label htmlfor="input-tournament-name">Name:</label>
           <input
             type="text"
             id="input-tournament-name"

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { useLocation } from "react-router-dom";
 
 import PersonCreateForm from "../components/people/PersonCreateForm";
 import TeamCreateForm from "../components/teams/TeamCreateForm";
@@ -24,7 +23,7 @@ class SubmissionPage extends Component {
     }
     return (
       <div id="submission-page" className="page">
-        <header id="page-header-submission" class="page-header">
+        <header id="page-header-submission" className="page-header">
           <h2>Add new...</h2>
         </header>
         {form}
