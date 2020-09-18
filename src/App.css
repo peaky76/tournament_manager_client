@@ -7,17 +7,18 @@
 }
 
 .page {
+  width: 60%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
 }
+
 .page-header {
   width: 100%;
 }
 
 /* Homepage */
 #homepage {
-  width: 60%;
 }
 
 #homepage-header {
@@ -86,11 +87,13 @@
 .component-display {
   background-color: palegreen;
   border: 0.125rem solid black;
-  height: 10rem;
-  width: 10rem;
 }
 
 /* Forms */
+
+.form-create {
+  width: 75%;
+}
 
 .form-input-field {
   padding: 1rem 0;
@@ -98,5 +101,5 @@
 }
 
 .form-input-field > label {
-  width: 20%;
+  width: 40%;
 }

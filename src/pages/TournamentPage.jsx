@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import FixturesList from "../components/fixtures/FixturesList";
 import TournamentHeader from "../components/tournaments/TournamentHeader";
 import TournamentsList from "../components/tournaments/TournamentsList";
@@ -18,7 +19,7 @@ class TournamentPage extends Component {
         </header>
         <section id="sidebar">
           <TournamentsList />
-          <button class="button-add-new">Add new</button>
+          <Link to="/tournaments/new">Add new</Link>
         </section>
         <section id="main-content">
           <TournamentTable />

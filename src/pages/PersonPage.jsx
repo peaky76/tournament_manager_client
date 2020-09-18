@@ -16,9 +16,7 @@ class PersonPage extends Component {
         </header>
         <section id="sidebar">
           <PeopleList />
-          <button class="button-add-new">
-            <Link to="/people/new">Add new</Link>
-          </button>
+          <Link to="/people/new">Add new</Link>
         </section>
         <section id="main-content">
           <PersonDetails />

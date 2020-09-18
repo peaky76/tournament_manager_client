@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import FixturesList from "../components/fixtures/FixturesList";
 import ResultsList from "../components/results/ResultsList";
 import ScorersList from "../components/scorers/ScorersList";
@@ -16,7 +17,7 @@ class TeamPage extends Component {
         </header>
         <section id="sidebar">
           <TeamsList />
-          <button class="button-add-new">Add new</button>
+          <Link to="/teams/new">Add new</Link>
         </section>
         <section id="main-content">
           <TeamPeopleList />
