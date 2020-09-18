@@ -2,9 +2,26 @@
   text-align: center;
 }
 
-section {
-  display: block;
-  background-color: palegoldenrod;
-  height: 5rem;
-  width: 5rem;
+#root {
+  display: flex;
+}
+
+#sidebar,
+#main-content {
+  padding: 1rem;
+}
+
+#sidebar {
+  width: 20%;
+}
+
+#main-content {
+  width: 80%;
+}
+
+.component-display {
+  background-color: palegreen;
+  border: 0.125rem solid black;
+  height: 10rem;
+  width: 20rem;
 }

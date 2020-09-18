@@ -5,6 +5,7 @@ const ResultsList = () => {
   return (
     <section className="component-display">
       <ul>
+        <h3>Results</h3>
         <ResultsListItem />
       </ul>
     </section>

@@ -5,6 +5,7 @@ const FixturesList = () => {
   return (
     <section className="component-display">
       <ul>
+        <h3>Fixtures</h3>
         <FixturesListItem />
       </ul>
     </section>

@@ -1,7 +1,11 @@
 import React from "react";
 
 const TeamHeader = () => {
-  return <header>Team Header</header>;
+  return (
+    <header>
+      <h1> This is the Team Header</h1>
+    </header>
+  );
 };
 
 export default TeamHeader;

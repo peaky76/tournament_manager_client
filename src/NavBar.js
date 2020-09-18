@@ -4,14 +4,14 @@ const NavBar = () => {
   return (
     <nav id="nav-main">
       <ul>
-        <li class="nav-main-item">
-          <a href="/leagues">Leagues</a>
+        <li className="nav-main-item">
+          <a href="/Tournaments">Tournaments</a>
         </li>
-        <li class="nav-main-item">
+        <li className="nav-main-item">
           <a href="/teams">Teams</a>
         </li>
-        <li class="nav-main-item">
-          <a href="/players">Players</a>
+        <li className="nav-main-item">
+          <a href="/people">People</a>
         </li>
       </ul>
     </nav>

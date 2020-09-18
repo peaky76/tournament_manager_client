@@ -3,7 +3,7 @@ import FixturesList from "../components/fixtures/FixturesList";
 import ResultsList from "../components/results/ResultsList";
 import ScorersList from "../components/scorers/ScorersList";
 import TeamHeader from "../components/teams/TeamHeader";
-import TeamPlayersList from "../components/teams/TeamPlayersList";
+import TeamPeopleList from "../components/teams/TeamPeopleList";
 import TeamsList from "../components/teams/TeamsList";
 
 class TeamContainer extends Component {
@@ -13,7 +13,7 @@ class TeamContainer extends Component {
       <>
         <TeamHeader />
         <TeamsList />
-        <TeamPlayersList />
+        <TeamPeopleList />
         <ResultsList />
         <FixturesList />
         <ScorersList />
