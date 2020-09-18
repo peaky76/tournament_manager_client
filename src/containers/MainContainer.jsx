@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ErrorPage from "../pages/ErrorPage";
 import FavouritesList from "../components/FavouritesList";
 import NavBar from "../NavBar.js";
-import PersonAddNewForm from "../components/people/PersonAddNewForm";
 import PersonContainer from "../containers/PersonContainer";
 import TeamContainer from "../containers/TeamContainer";
 import TournamentContainer from "../containers/TournamentContainer";
@@ -20,7 +19,6 @@ class MainContainer extends Component {
           <section id="main-content">
             <Switch>
               <Route path="/people" component={PersonContainer} />
-              <Route path="/people/new" component={ErrorPage} />
               <Route path="/teams" component={TeamContainer} />
               <Route path="/tournaments" component={TournamentContainer} />
               <Route component={ErrorPage} />

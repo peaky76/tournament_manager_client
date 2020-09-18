@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class PersonAddNewForm extends Component {
+class PersonCreateForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -20,7 +20,11 @@ class PersonAddNewForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form
+        id="form-person-create"
+        className="form-create"
+        onSubmit={this.handleSubmit}
+      >
         <div className="form-input-field">
           <label for="input-first-name">First name:</label>
           <input
@@ -68,4 +72,4 @@ class PersonAddNewForm extends Component {
   }
 }
 
-export default PersonAddNewForm;
+export default PersonCreateForm;

@@ -5,7 +5,7 @@ import PersonDetails from "../components/people/PersonDetails";
 import PersonGoals from "../components/people/PersonGoals";
 import PersonHeader from "../components/people/PersonHeader";
 import PeopleList from "../components/people/PeopleList";
-import PersonAddNewForm from "../components/people/PersonAddNewForm";
+import PersonCreateForm from "../components/people/PersonCreateForm";
 
 class PersonContainer extends Component {
   state = {};
@@ -15,7 +15,7 @@ class PersonContainer extends Component {
         {/* <button class="button-add-new">
           <Link to="/people/new">Add new</Link>
         </button> */}
-        <PersonAddNewForm />
+        <PersonCreateForm />
         {/* <PersonHeader />
         <PeopleList />
         <PersonDetails />
