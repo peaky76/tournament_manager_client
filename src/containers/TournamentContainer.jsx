@@ -11,12 +11,13 @@ class TournamentContainer extends Component {
   render() {
     return (
       <>
-        <TournamentHeader />
+        <button class="button-add-new">Add new</button>
+        {/* <TournamentHeader />
         <TournamentsList />
         <TournamentTable />
         <ResultsList />
         <FixturesList />
-        <ScorersList />
+        <ScorersList /> */}
       </>
     );
   }

@@ -1,17 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <nav id="nav-main">
       <ul>
         <li className="nav-main-item">
-          <a href="/Tournaments">Tournaments</a>
+          <Link to="/tournaments">Tournaments</Link>
         </li>
         <li className="nav-main-item">
-          <a href="/teams">Teams</a>
+          <Link to="/teams">Teams</Link>
         </li>
         <li className="nav-main-item">
-          <a href="/people">People</a>
+          <Link to="/people">People</Link>
         </li>
       </ul>
     </nav>

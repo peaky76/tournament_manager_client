@@ -11,12 +11,13 @@ class TeamContainer extends Component {
   render() {
     return (
       <>
-        <TeamHeader />
+        <button class="button-add-new">Add new</button>
+        {/* <TeamHeader />
         <TeamsList />
         <TeamPeopleList />
         <ResultsList />
         <FixturesList />
-        <ScorersList />
+        <ScorersList /> */}
       </>
     );
   }
