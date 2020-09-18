@@ -6,15 +6,21 @@
   display: flex;
 }
 
-/* Homepage */
-#homepage {
-  width: 60%;
+.page {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
 }
-#homepage-header {
+.page-header {
   width: 100%;
+}
+
+/* Homepage */
+#homepage {
+  width: 60%;
+}
+
+#homepage-header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,25 +52,42 @@
 }
 
 /* Other pages */
+#content-page {
+  width: 80%;
+}
+
+#content-page-header {
+}
 
 #sidebar,
 #main-content {
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 #sidebar {
   width: 20%;
+  background-color: lightgoldenrodyellow;
 }
 
 #main-content {
   width: 80%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  background-color: lightsalmon;
+}
+
+#main-content > *:first-child {
+  height: 100%;
+  width: 67%;
 }
 
 .component-display {
   background-color: palegreen;
   border: 0.125rem solid black;
   height: 10rem;
-  width: 20rem;
+  width: 10rem;
 }
 
 /* Forms */
