@@ -1,11 +1,12 @@
 import React from "react";
 import TeamsListItem from "./TeamsListItem";
 
-const TeamsList = () => {
+const TeamsList = ({ teams }) => {
   return (
     <section>
       <ul>
         Teams
+        {teams}
         <TeamsListItem />
       </ul>
     </section>

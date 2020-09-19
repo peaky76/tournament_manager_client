@@ -7,16 +7,32 @@ import TeamHeader from "../components/teams/TeamHeader";
 import TeamPeopleList from "../components/teams/TeamPeopleList";
 import TeamsList from "../components/teams/TeamsList";
 
+import Request from "../helpers/request";
+
 class TeamPage extends Component {
-  state = {};
+  constructor() {
+    super();
+    this.state = {
+      teams: [],
+    };
+  }
+
+  componentDidMount() {
+    const request = new Request();
+
+    request.get("http://localhost:8080/api/teams").then((data) => {
+      this.setState({ teams: data });
+    });
+  }
+
   render() {
     return (
       <div id="content-page" className="page">
-        <header id="page-header-content" classname="page-header">
+        <header id="page-header-content" className="page-header">
           <TeamHeader />
         </header>
         <section id="sidebar">
-          <TeamsList />
+          <TeamsList teams={this.state.teams} />
           <Link to="/teams/new">Add new</Link>
         </section>
         <section id="main-content">

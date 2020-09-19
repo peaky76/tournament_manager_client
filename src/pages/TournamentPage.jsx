@@ -11,6 +11,7 @@ class TournamentPage extends Component {
   constructor() {
     super();
   }
+
   render() {
     return (
       <div id="content-page" className="page">

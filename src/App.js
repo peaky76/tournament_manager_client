@@ -14,9 +14,12 @@ function App() {
       <>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/people" component={PersonPage} />
           <Route exact path="/:object/new" component={SubmissionPage} />
+
           <Route path="/people/:id" component={PersonPage} />
+
+          <Route exact path="/people" component={PersonPage} />
+
           <Route exact path="/teams" component={TeamPage} />
           {/* <Route exact path="/teams/new" component={SubmissionPage} /> */}
           <Route path="/teams/:id" component={TeamPage} />
