@@ -43,11 +43,7 @@ class SubmissionPage extends Component {
     }
     return (
       <div id="submission-page" className="page">
-        <section id="sidebar">
-          Sidebar here
-          {/* <DisplayList items={this.state.itemList} onClick={this.handleItemSelect} /> */}
-          {/* <Link to={collection + "/new"}>Add new</Link> */}
-        </section>
+        <section id="sidebar">Sidebar here</section>
         <section id="main">{form}</section>
       </div>
     );

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import ErrorPage from "./ErrorPage";
 import DisplayList from "../components/lists/DisplayList";
+import MatchContainer from "../containers/MatchContainer";
 import PersonContainer from "../containers/PersonContainer";
 import TeamContainer from "../containers/TeamContainer";
 import TournamentContainer from "../containers/TournamentContainer";
@@ -13,17 +14,22 @@ class DisplayPage extends Component {
     super();
     this.state = {
       itemList: [],
-      selectedItemId: 1,
+      selectedItemId: "",
     };
     this.findItemById = this.findItemById.bind(this);
-    this.handleItemSelect = this.handleItemSelect.bind(this);
   }
 
   componentDidMount() {
     const request = new Request();
+    const collection = this.props.match.params.collection;
+    const id = this.props.match.params.id;
 
-    request.get("/api/" + this.props.match.params.collection).then((data) => {
+    request.get("/api/" + collection).then((data) => {
       this.setState({ itemList: data });
+    });
+
+    this.setState({
+      selectedItemId: id,
     });
   }
 
@@ -33,23 +39,22 @@ class DisplayPage extends Component {
     });
   }
 
-  handleItemSelect(id) {
-    this.setState({ selectedItemId: id });
-  }
-
   render() {
     let collection = this.props.match.params.collection;
     let selectedItem = this.findItemById(this.state.selectedItemId);
     let container = null;
 
-    if (collection === "tournaments") {
-      container = <TournamentContainer tournament={selectedItem} />;
+    if (collection === "matches") {
+      container = <MatchContainer match={selectedItem} />;
     }
     if (collection === "people") {
       container = <PersonContainer person={selectedItem} />;
     }
     if (collection === "teams") {
       container = <TeamContainer team={selectedItem} />;
+    }
+    if (collection === "tournaments") {
+      container = <TournamentContainer tournament={selectedItem} />;
     }
 
     if (!selectedItem) {
@@ -58,7 +63,10 @@ class DisplayPage extends Component {
     return (
       <div id="display-page" className="page">
         <section id="sidebar">
-          <DisplayList items={this.state.itemList} onClick={this.handleItemSelect} />
+          <DisplayList
+            items={this.state.itemList}
+            collection={this.props.match.params.collection}
+          />
           <Link to={collection + "/new"}>Add new</Link>
         </section>
         <section id="main">{container}</section>

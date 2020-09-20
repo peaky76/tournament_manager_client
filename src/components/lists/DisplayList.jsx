@@ -1,7 +1,7 @@
 import React from "react";
 import DisplayListItem from "./DisplayListItem";
 
-const DisplayList = ({ items, onClick }) => {
+const DisplayList = ({ items, collection }) => {
   if (items.length === 0) {
     return (
       <section>
@@ -11,7 +11,7 @@ const DisplayList = ({ items, onClick }) => {
   }
 
   const itemNodes = items.map((item, index) => {
-    return <DisplayListItem key={index} item={item} onClick={onClick} />;
+    return <DisplayListItem key={index} item={item} collection={collection} />;
   });
 
   return (
