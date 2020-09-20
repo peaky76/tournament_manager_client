@@ -35,10 +35,15 @@ class SubmissionPage extends Component {
     }
     return (
       <div id="submission-page" className="page">
-        <header id="page-header-submission" className="page-header">
+        <section id="sidebar">
+          Sidebar here
+          {/* <DisplayList items={this.state.itemList} onClick={this.handleItemSelect} /> */}
+          {/* <Link to={collection + "/new"}>Add new</Link> */}
+        </section>
+        <section id="main">
           <h2>Add new...</h2>
-        </header>
-        {form}
+          {form}
+        </section>
       </div>
     );
   }

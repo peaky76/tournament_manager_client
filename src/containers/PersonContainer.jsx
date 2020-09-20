@@ -1,13 +1,17 @@
 import React from "react";
 
+import PersonHeader from "../components/people/PersonHeader";
 import PersonDetails from "../components/people/PersonDetails";
 import PersonGoals from "../components/people/PersonGoals";
 
-const PersonContainer = () => {
+const PersonContainer = ({ person }) => {
   return (
     <>
-      <PersonDetails />
-      <PersonGoals />
+      <PersonHeader person={person} />
+      <div id="content-wrapper">
+        <PersonDetails person={person} />
+        <PersonGoals />
+      </div>
     </>
   );
 };

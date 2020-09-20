@@ -15,8 +15,8 @@ const DisplayList = ({ items, onClick }) => {
   });
 
   return (
-    <section className="component-display">
-      <h2 className="component-header">Items</h2>
+    <section>
+      <h2 className="component-header">ITEMS</h2>
       <ul>{itemNodes}</ul>
     </section>
   );

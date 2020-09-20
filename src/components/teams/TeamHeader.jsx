@@ -1,9 +1,9 @@
 import React from "react";
 
-const TeamHeader = () => {
+const TeamHeader = ({ team }) => {
   return (
     <header>
-      <h1>Team Header</h1>
+      <h1>{team.name}</h1>
     </header>
   );
 };

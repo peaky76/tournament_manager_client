@@ -1,9 +1,9 @@
 import React from "react";
 
-const TournamentHeader = () => {
+const TournamentHeader = ({ tournament }) => {
   return (
     <header>
-      <h1>Tournament Header</h1>
+      <h1>{tournament.name}</h1>
     </header>
   );
 };

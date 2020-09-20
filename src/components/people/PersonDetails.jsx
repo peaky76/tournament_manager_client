@@ -2,10 +2,10 @@ import React, { Component } from "react";
 
 const PersonDetails = ({ person }) => {
   if (!person) {
-    return <p>Loading...</p>;
+    return <p>No data available.</p>;
   }
   return (
-    <section className="component-display">
+    <section>
       <ul>
         <li>
           {person.firstName} {person.lastName}

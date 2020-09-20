@@ -53,15 +53,13 @@
 }
 
 /* Other pages */
-#content-page {
+#display-page,
+#submission-page {
   width: 80%;
 }
 
-#content-page-header {
-}
-
 #sidebar,
-#main-content {
+#main {
   /* padding: 1rem; */
 }
 
@@ -70,21 +68,30 @@
   background-color: lightgoldenrodyellow;
 }
 
-#main-content {
+#main {
   width: 80%;
+  background-color: lightsalmon;
+}
+
+#main > header {
+  width: 100%;
+}
+
+#content-wrapper {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: flex-start;
-  background-color: lightsalmon;
 }
 
-#main-content > *:first-child {
-  height: 100%;
+#content-wrapper > *:first-child {
   width: 67%;
+  height: 100%;
 }
 
-.component-display {
+#content-wrapper > section {
   background-color: palegreen;
   border: 0.125rem solid black;
 }

@@ -3,7 +3,7 @@ import ResultsListItem from "./ResultsListItem";
 
 const ResultsList = () => {
   return (
-    <section className="component-display">
+    <section>
       <ul>
         <h3>Results</h3>
         <ResultsListItem />

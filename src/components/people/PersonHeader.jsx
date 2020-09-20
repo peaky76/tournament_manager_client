@@ -1,9 +1,11 @@
 import React from "react";
 
-const PersonHeader = () => {
+const PersonHeader = ({ person }) => {
   return (
     <header>
-      <h1>Person Header</h1>
+      <h1>
+        {person.firstName} {person.lastName}
+      </h1>
     </header>
   );
 };

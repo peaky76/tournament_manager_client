@@ -3,7 +3,7 @@ import FixturesListItem from "./FixturesListItem";
 
 const FixturesList = () => {
   return (
-    <section className="component-display">
+    <section>
       <ul>
         <h3>Fixtures</h3>
         <FixturesListItem />

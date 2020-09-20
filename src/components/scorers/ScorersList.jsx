@@ -3,7 +3,7 @@ import ScorersListItem from "./ScorersListItem";
 
 const ScorersList = () => {
   return (
-    <section className="component-display">
+    <section>
       <ul>
         <h3>Scorers</h3>
         <ScorersListItem />

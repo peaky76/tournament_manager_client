@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-import DisplayList from "../components/display_lists/DisplayList";
+import ErrorPage from "./ErrorPage";
+import DisplayList from "../components/lists/DisplayList";
 import PersonContainer from "../containers/PersonContainer";
 import TeamContainer from "../containers/TeamContainer";
 import TournamentContainer from "../containers/TournamentContainer";
@@ -37,26 +39,29 @@ class DisplayPage extends Component {
 
   render() {
     let collection = this.props.match.params.collection;
+    let selectedItem = this.findItemById(this.state.selectedItemId);
     let container = null;
+
     if (collection === "tournaments") {
-      container = <TournamentContainer tournaments={this.state.itemList} />;
+      container = <TournamentContainer tournament={selectedItem} />;
     }
     if (collection === "people") {
-      container = <PersonContainer people={this.state.itemList} />;
+      container = <PersonContainer person={selectedItem} />;
     }
     if (collection === "teams") {
-      container = <TeamContainer teams={this.state.itemList} />;
+      container = <TeamContainer team={selectedItem} />;
+    }
+
+    if (!selectedItem) {
+      return <ErrorPage />;
     }
     return (
-      <div id="content-page" className="page">
-        <header id="page-header-content" className="page-header">
-          Header!!!!
-        </header>
+      <div id="display-page" className="page">
         <section id="sidebar">
           <DisplayList items={this.state.itemList} onClick={this.handleItemSelect} />
-          {/* <Link to="/teams/new">Add new</Link> */}
+          <Link to={collection + "/new"}>Add new</Link>
         </section>
-        <section id="main-content">{container}</section>
+        <section id="main">{container}</section>
       </div>
     );
   }
