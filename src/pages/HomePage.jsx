@@ -1,14 +1,23 @@
 import React, { Component } from "react";
 import FavouritesList from "../components/FavouritesList";
 import NavBar from "../NavBar.js";
+import Request from "../helpers/request";
 
 class HomePage extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      people: [],
+    };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    const request = new Request();
+
+    request.get("/api/people").then((data) => {
+      this.setState({ people: data });
+    });
+  }
 
   render() {
     return (

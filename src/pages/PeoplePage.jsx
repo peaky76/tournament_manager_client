@@ -21,7 +21,7 @@ class PersonPage extends Component {
   componentDidMount() {
     const request = new Request();
 
-    request.get("http://localhost:8080/api/people").then((data) => {
+    request.get("/api/people").then((data) => {
       this.setState({ people: data });
     });
   }
@@ -32,20 +32,12 @@ class PersonPage extends Component {
     });
   }
 
-  // handleDelete(id) {
-  //   const request = new Request();
-  //   const url = "http://localhost:8080/api/people/" + id;
-  //   request.delete(url).then(() => {
-  //     window.location = "/people";
-  //   });
-  // }
-
   handlePersonSelect(id) {
     this.setState({ selectedPersonId: id });
   }
 
   render() {
-    // const person = this.findPersonById(this.props.match.params.id);
+    let person = this.findPersonById(this.state.selectedPersonId);
     return (
       <div id="content-page" className="page">
         <header id="page-header-content" className="page-header">
@@ -56,7 +48,7 @@ class PersonPage extends Component {
           <Link to="/people/new">Add new</Link>
         </section>
         <section id="main-content">
-          <PersonDetails person={this.findPersonById(this.state.selectedPersonId)} />
+          <PersonDetails person={person} />
           <PersonGoals />
         </section>
       </div>

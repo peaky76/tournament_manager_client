@@ -20,7 +20,8 @@ class PersonCreateForm extends Component {
     });
   }
 
-  handlePost() {
+  handlePost(event) {
+    event.preventDefault();
     const request = new Request();
     const person = {
       firstName: this.state.firstName,
@@ -28,7 +29,7 @@ class PersonCreateForm extends Component {
       nationality: this.state.nationality,
       dateOfBirth: this.state.dateOfBirth,
     };
-    request.post("http://localhost:8080/api/people", person).then((res) => console.log(res));
+    request.post("/api/people", person).then((res) => console.log(res));
     // .then(() => (window.location = "/people"));
   }
 
