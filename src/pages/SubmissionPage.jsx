@@ -1,25 +1,37 @@
 import React, { Component } from "react";
 
-import PersonCreateForm from "../components/people/PersonCreateForm";
-import TeamCreateForm from "../components/teams/TeamCreateForm";
-import TournamentCreateForm from "../components/tournaments/TournamentCreateForm";
+import Request from "../helpers/request";
+
+import PersonForm from "../forms/PersonForm";
+import TeamForm from "../forms/TeamForm";
+import TournamentForm from "../forms/TournamentForm";
 
 class SubmissionPage extends Component {
   constructor() {
     super();
     this.state = {};
+    this.handlePost = this.handlePost.bind(this);
   }
+
+  handlePost(item) {
+    const request = new Request();
+    request
+      .post("/api/" + this.props.match.params.collection, item)
+      .then((res) => console.log(res));
+    // .then(() => (window.location = "/people"));
+  }
+
   render() {
-    let newObject = this.props.match.params.object;
+    let collection = this.props.match.params.collection;
     let form;
-    if (newObject === "tournaments") {
-      form = <TournamentCreateForm />;
+    if (collection === "tournaments") {
+      form = <TournamentForm handlePost={this.handlePost} />;
     }
-    if (newObject === "people") {
-      form = <PersonCreateForm />;
+    if (collection === "people") {
+      form = <PersonForm handlePost={this.handlePost} />;
     }
-    if (newObject === "teams") {
-      form = <TeamCreateForm />;
+    if (collection === "teams") {
+      form = <TeamForm handlePost={this.handlePost} />;
     }
     return (
       <div id="submission-page" className="page">

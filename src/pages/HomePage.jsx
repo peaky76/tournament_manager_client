@@ -6,17 +6,7 @@ import Request from "../helpers/request";
 class HomePage extends Component {
   constructor() {
     super();
-    this.state = {
-      people: [],
-    };
-  }
-
-  componentDidMount() {
-    const request = new Request();
-
-    request.get("/api/people").then((data) => {
-      this.setState({ people: data });
-    });
+    this.state = {};
   }
 
   render() {
