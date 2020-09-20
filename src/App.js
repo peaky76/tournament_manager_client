@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
-import PersonPage from "./pages/PersonPage";
-import TeamPage from "./pages/TeamPage";
+import PeoplePage from "./pages/PeoplePage";
+import TeamsPage from "./pages/TeamsPage";
 import SubmissionPage from "./pages/SubmissionPage";
-import TournamentPage from "./pages/TournamentPage";
+import TournamentsPage from "./pages/TournamentsPage";
 
 function App() {
   return (
@@ -15,17 +15,12 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/:object/new" component={SubmissionPage} />
-
-          <Route path="/people/:id" component={PersonPage} />
-
-          <Route exact path="/people" component={PersonPage} />
-
-          <Route exact path="/teams" component={TeamPage} />
-          {/* <Route exact path="/teams/new" component={SubmissionPage} /> */}
-          <Route path="/teams/:id" component={TeamPage} />
-          <Route exact path="/tournaments" component={TournamentPage} />
-          {/* <Route exact path="/tournaments/new" component={SubmissionPage} /> */}
-          <Route path="/tournaments/:id" component={TournamentPage} />
+          <Route exact path="/people" component={PeoplePage} />
+          {/* <Route path="/people/:id" component={PersonPage} /> */}
+          <Route exact path="/teams" component={TeamsPage} />
+          {/* <Route path="/teams/:id" component={TeamPage} /> */}
+          <Route exact path="/tournaments" component={TournamentsPage} />
+          {/* <Route path="/tournaments/:id" component={TournamentPage} /> */}
           <Route component={ErrorPage} />
         </Switch>
       </>

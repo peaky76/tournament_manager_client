@@ -1,12 +1,12 @@
 import React from "react";
 
-const PersonDetails = () => {
+const PersonDetails = ({ person }) => {
   return (
     <section className="component-display">
       <ul>
-        <li>Name: Albert Aardvark</li>
-        <li>Nationality: Swedish</li>
-        <li>Age: 35</li>
+        <li>Name: Fred Bloggs</li>
+        <li>Nationality: Polish</li>
+        <li>Date of Birth: 1/1/2000</li>
       </ul>
     </section>
   );

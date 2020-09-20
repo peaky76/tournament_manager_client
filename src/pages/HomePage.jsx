@@ -1,32 +1,14 @@
 import React, { Component } from "react";
 import FavouritesList from "../components/FavouritesList";
 import NavBar from "../NavBar.js";
-import Request from "../helpers/request";
 
 class HomePage extends Component {
   constructor() {
     super();
-    this.state = {
-      teams: [],
-      tournaments: [],
-      people: [],
-    };
+    this.state = {};
   }
 
-  componentDidMount() {
-    const request = new Request();
-
-    request.get("http://localhost:8080/api/teams").then((data) => {
-      this.setState({ teams: data });
-    });
-    //  request.get("/api/tournaments").then((res) => {
-    //    console.log(res);
-    //    this.setState({ teams: data });
-    //  });
-    request.get("http://localhost:8080/api/people").then((data) => {
-      this.setState({ people: data });
-    });
-  }
+  componentDidMount() {}
 
   render() {
     return (
