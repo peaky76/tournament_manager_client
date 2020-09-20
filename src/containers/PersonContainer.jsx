@@ -9,6 +9,7 @@ const PersonContainer = ({ person }) => {
     <>
       <PersonHeader person={person} />
       <div id="content-wrapper">
+        {/* <PersonForm person={person} /> */}
         <PersonDetails person={person} />
         <PersonGoals />
       </div>

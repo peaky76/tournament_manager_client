@@ -100,13 +100,10 @@
 
 .form-create {
   width: 75%;
-}
-
-.form-input-field {
-  padding: 1rem 0;
   display: flex;
+  flex-direction: column;
 }
 
-.form-input-field > label {
-  width: 40%;
+form > input {
+  padding: 1rem 0;
 }

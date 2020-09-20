@@ -4,33 +4,44 @@ class TournamentForm extends Component {
   constructor() {
     super();
     this.state = {
-      sport: null,
       name: "",
-      teams: [],
+      sport: "",
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const tournament = {
+      name: this.state.name,
+      sport: this.state.sport,
+    };
+    this.props.handlePost(tournament);
+  }
+
   render() {
     return (
-      <form id="form-person-create" className="form-create" onSubmit={this.handleSubmit}>
-        <div className="form-input-field">
-          <label htmlfor="select-sport">Select sport:</label>
-          <select id="select-sport" name="sport" onChange={this.handleChange}>
-            <option value="Football">Football</option>
-            <option value="Rugby League">Rugby League</option>
-            <option value="Rugby Union">Rugby Union</option>
-            <option value="Ice Hockey">Ice Hockey</option>
-          </select>
-        </div>
-        <div className="form-input-field">
-          <label htmlfor="input-tournament-name">Name:</label>
-          <input
-            type="text"
-            id="input-tournament-name"
-            name="name"
-            onChange={this.handleChange}
-          ></input>
-        </div>
-        <div className="form-input-field">{/* Drag & Drop? */}</div>
+      <form id="form-tournament-create" className="form-create" onSubmit={this.handleSubmit}>
+        <input
+          type="text"
+          value={this.state.name}
+          onChange={this.handleChange}
+          placeholder="Name"
+        ></input>
+        <input
+          type="text"
+          value={this.state.sport}
+          onChange={this.handleChange}
+          placeholder="Sport"
+        ></input>
+        <button className="button-submit">Submit</button>
       </form>
     );
   }

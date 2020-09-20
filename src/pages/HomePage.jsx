@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import FavouritesList from "../components/lists/FavouritesList";
 import NavBar from "../NavBar.js";
-import Request from "../helpers/request";
 
 class HomePage extends Component {
   constructor() {

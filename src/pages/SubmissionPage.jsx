@@ -2,9 +2,12 @@ import React, { Component } from "react";
 
 import Request from "../helpers/request";
 
+import MatchForm from "../forms/MatchForm";
 import PersonForm from "../forms/PersonForm";
+import ScoreEventForm from "../forms/ScoreEventForm";
 import TeamForm from "../forms/TeamForm";
 import TournamentForm from "../forms/TournamentForm";
+import VenueForm from "../forms/VenueForm";
 
 class SubmissionPage extends Component {
   constructor() {
@@ -15,23 +18,28 @@ class SubmissionPage extends Component {
 
   handlePost(item) {
     const request = new Request();
-    request
-      .post("/api/" + this.props.match.params.collection, item)
-      .then((res) => console.log(res));
-    // .then(() => (window.location = "/people"));
+    console.log(item);
+    request.post("/api/" + this.props.match.params.collection, item);
+    // .then(() => (window.location = "/" + this.props.match.params.collection));
   }
 
   render() {
     let collection = this.props.match.params.collection;
     let form;
-    if (collection === "tournaments") {
-      form = <TournamentForm handlePost={this.handlePost} />;
+    if (collection === "matches") {
+      form = <MatchForm handlePost={this.handlePost} />;
     }
     if (collection === "people") {
       form = <PersonForm handlePost={this.handlePost} />;
     }
     if (collection === "teams") {
       form = <TeamForm handlePost={this.handlePost} />;
+    }
+    if (collection === "tournaments") {
+      form = <TournamentForm handlePost={this.handlePost} />;
+    }
+    if (collection === "venues") {
+      form = <VenueForm handlePost={this.handlePost} />;
     }
     return (
       <div id="submission-page" className="page">
@@ -40,10 +48,7 @@ class SubmissionPage extends Component {
           {/* <DisplayList items={this.state.itemList} onClick={this.handleItemSelect} /> */}
           {/* <Link to={collection + "/new"}>Add new</Link> */}
         </section>
-        <section id="main">
-          <h2>Add new...</h2>
-          {form}
-        </section>
+        <section id="main">{form}</section>
       </div>
     );
   }

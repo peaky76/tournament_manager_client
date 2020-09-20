@@ -12,15 +12,10 @@ function App() {
       <>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/:collection/new" component={SubmissionPage} />
+          <Route exact path="/:collection/new" component={SubmissionPage} />
+          <Route path="/:collection/:id" component={DisplayPage} />
           <Route path="/:collection" component={DisplayPage} />
           <Route component={ErrorPage} />
-          {/* <Route exact path="/people" component={PeoplePage} /> */}
-          {/* <Route path="/people/:id" component={PersonPage} /> */}
-          {/* <Route exact path="/teams" component={TeamsPage} /> */}
-          {/* <Route path="/teams/:id" component={TeamPage} /> */}
-          {/* <Route exact path="/tournaments" component={TournamentsPage} /> */}
-          {/* <Route path="/tournaments/:id" component={TournamentPage} /> */}
         </Switch>
       </>
     </Router>

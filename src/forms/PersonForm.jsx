@@ -4,12 +4,10 @@ class PersonForm extends Component {
   constructor() {
     super();
     this.state = {
-      person: {
-        firstName: "",
-        lastName: "",
-        nationality: "",
-        dateOfBirth: null,
-      },
+      firstName: "",
+      lastName: "",
+      nationality: "",
+      dateOfBirth: null,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,49 +21,40 @@ class PersonForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.handlePost(this.state.person);
+    const person = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      nationality: this.state.nationality,
+      dateOfBirth: this.state.dateOfBirth,
+    };
+    this.props.handlePost(person);
   }
 
   render() {
     return (
       <form id="form-person-create" className="form-create" onSubmit={this.handleSubmit}>
-        <div className="form-input-field">
-          <label htmlFor="input-first-name">First name:</label>
-          <input
-            type="text"
-            id="input-first-name"
-            name="person.firstName"
-            onChange={this.handleChange}
-          ></input>
-        </div>
-        <div className="form-input-field">
-          <label htmlFor="input-last-name">Last name:</label>
-          <input
-            type="text"
-            id="input-last-name"
-            name="person.lastName"
-            onChange={this.handleChange}
-          ></input>
-        </div>
-        <div className="form-input-field">
-          <label htmlFor="select-nationality">Nationality:</label>
-          <select id="select-nationality" name="person.nationality" onChange={this.handleChange}>
-            <option value="England">England</option>
-            <option value="France">France</option>
-            <option value="Scotland">Scotland</option>
-            <option value="Slovakia">Slovakia</option>
-            <option value="Spain">Spain</option>
-          </select>
-        </div>
-        <div className="form-input-field">
-          <label htmlFor="input-dob">Date of birth:</label>
-          <input
-            type="date"
-            id="input-dob"
-            name="person.dateOfBirth"
-            onChange={this.handleChange}
-          />
-        </div>
+        <input
+          type="text"
+          name="firstName"
+          value={this.state.firstName}
+          onChange={this.handleChange}
+          placeholder="First name"
+        ></input>
+        <input
+          type="text"
+          name="lastName"
+          value={this.state.lastName}
+          onChange={this.handleChange}
+          placeholder="Last name"
+        ></input>
+        <input
+          type="text"
+          name="nationality"
+          value={this.state.nationality}
+          onChange={this.handleChange}
+          placeholder="Nationality"
+        ></input>
+        <input type="date" id="input-dob" name="dateOfBirth" onChange={this.handleChange} />
         <button className="button-submit">Submit</button>
       </form>
     );
