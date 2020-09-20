@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import ErrorPage from "./ErrorPage";
 import DisplayList from "../components/lists/DisplayList";
 import MatchContainer from "../containers/MatchContainer";
 import PersonContainer from "../containers/PersonContainer";
 import TeamContainer from "../containers/TeamContainer";
 import TournamentContainer from "../containers/TournamentContainer";
+import VenueContainer from "../containers/VenueContainer";
 import Request from "../helpers/request";
 
 class DisplayPage extends Component {
@@ -17,6 +17,7 @@ class DisplayPage extends Component {
       selectedItemId: "",
     };
     this.findItemById = this.findItemById.bind(this);
+    this.handleSelectItem = this.handleSelectItem.bind(this);
   }
 
   componentDidMount() {
@@ -39,6 +40,10 @@ class DisplayPage extends Component {
     });
   }
 
+  handleSelectItem(id) {
+    window.location = "/" + this.props.match.params.collection + "/" + id;
+  }
+
   render() {
     let collection = this.props.match.params.collection;
     let selectedItem = this.findItemById(this.state.selectedItemId);
@@ -56,18 +61,18 @@ class DisplayPage extends Component {
     if (collection === "tournaments") {
       container = <TournamentContainer tournament={selectedItem} />;
     }
-
+    if (collection === "venues") {
+      container = <VenueContainer venue={selectedItem} />;
+    }
     if (!selectedItem) {
-      return <ErrorPage />;
+      container = null;
     }
     return (
       <div id="display-page" className="page">
         <section id="sidebar">
-          <DisplayList
-            items={this.state.itemList}
-            collection={this.props.match.params.collection}
-          />
-          <Link to={collection + "/new"}>Add new</Link>
+          <h2>{collection}</h2>
+          <DisplayList items={this.state.itemList} onClick={this.handleSelectItem} />
+          <Link to={"/" + collection + "/new"}>Add new</Link>
         </section>
         <section id="main">{container}</section>
       </div>

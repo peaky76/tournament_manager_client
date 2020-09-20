@@ -13,6 +13,17 @@ class PersonForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    if (this.props.person) {
+      this.setState({
+        firstName: this.props.person.firstName,
+        lastName: this.props.person.lastName,
+        nationality: this.props.person.nationality,
+        dateOfBirth: this.props.person.dateOfBirth,
+      });
+    }
+  }
+
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
