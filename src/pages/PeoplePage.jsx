@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import { Link } from "react-router-dom";
 
 import PersonDetails from "../components/people/PersonDetails";
@@ -13,8 +12,10 @@ class PersonPage extends Component {
     super();
     this.state = {
       people: [],
+      selectedPersonId: 1,
     };
-    // this.findPersonById = this.findPersonById.bind(this);
+    this.findPersonById = this.findPersonById.bind(this);
+    this.handlePersonSelect = this.handlePersonSelect.bind(this);
   }
 
   componentDidMount() {
@@ -25,11 +26,11 @@ class PersonPage extends Component {
     });
   }
 
-  // findPersonById(id) {
-  //   return this.state.people.find((person) => {
-  //     return person.id === parseInt(id);
-  //   });
-  // }
+  findPersonById(id) {
+    return this.state.people.find((person) => {
+      return person.id === parseInt(id);
+    });
+  }
 
   // handleDelete(id) {
   //   const request = new Request();
@@ -39,6 +40,10 @@ class PersonPage extends Component {
   //   });
   // }
 
+  handlePersonSelect(id) {
+    this.setState({ selectedPersonId: id });
+  }
+
   render() {
     // const person = this.findPersonById(this.props.match.params.id);
     return (
@@ -47,12 +52,11 @@ class PersonPage extends Component {
           <PersonHeader />
         </header>
         <section id="sidebar">
-          <PeopleList people={this.state.people} />
+          <PeopleList people={this.state.people} onClick={this.handlePersonSelect} />
           <Link to="/people/new">Add new</Link>
         </section>
         <section id="main-content">
-          {/* <PersonDetails person={person} onDelete={this.handleDelete} /> */}
-          <PersonDetails />
+          <PersonDetails person={this.findPersonById(this.state.selectedPersonId)} />
           <PersonGoals />
         </section>
       </div>

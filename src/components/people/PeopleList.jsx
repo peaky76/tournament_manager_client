@@ -1,7 +1,7 @@
 import React from "react";
 import PeopleListItem from "./PeopleListItem";
 
-const PeopleList = ({ people }) => {
+const PeopleList = ({ people, onClick }) => {
   if (people.length === 0) {
     return (
       <section>
@@ -11,7 +11,7 @@ const PeopleList = ({ people }) => {
   }
 
   const peopleNodes = people.map((person, index) => {
-    return <PeopleListItem key={index} person={person} />;
+    return <PeopleListItem key={index} person={person} onClick={onClick} />;
   });
 
   return (

@@ -1,9 +1,9 @@
 import React from "react";
 
-const PeopleListItem = ({ person }) => {
+const PeopleListItem = ({ person, onClick }) => {
   return (
-    <li>
-      {person.firstName} {person.lastName}
+    <li onClick={() => onClick(person.id)}>
+      {person.id}: {person.firstName} {person.lastName}
     </li>
   );
 };

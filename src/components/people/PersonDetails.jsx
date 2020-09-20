@@ -1,12 +1,17 @@
 import React from "react";
 
 const PersonDetails = ({ person }) => {
+  if (!person) {
+    return <p>Loading...</p>;
+  }
   return (
     <section className="component-display">
       <ul>
-        <li>Name: Fred Bloggs</li>
-        <li>Nationality: Polish</li>
-        <li>Date of Birth: 1/1/2000</li>
+        <li>
+          {person.firstName} {person.lastName}
+        </li>
+        <li>{person.nationality}</li>
+        <li>{person.dateOfBirth}</li>
       </ul>
     </section>
   );
