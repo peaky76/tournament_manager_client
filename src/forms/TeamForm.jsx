@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class TeamCreateForm extends Component {
+class TeamForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -41,4 +41,4 @@ class TeamCreateForm extends Component {
   }
 }
 
-export default TeamCreateForm;
+export default TeamForm;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class TournamentCreateForm extends Component {
+class TournamentForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -36,4 +36,4 @@ class TournamentCreateForm extends Component {
   }
 }
 
-export default TournamentCreateForm;
+export default TournamentForm;

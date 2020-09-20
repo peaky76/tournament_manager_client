@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Request from "../../helpers/request";
 
-class PersonCreateForm extends Component {
+class PersonForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -74,4 +74,4 @@ class PersonCreateForm extends Component {
   }
 }
 
-export default PersonCreateForm;
+export default PersonForm;
