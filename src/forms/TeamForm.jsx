@@ -37,14 +37,14 @@ class TeamForm extends Component {
           name="name"
           value={this.state.name}
           onChange={this.handleChange}
-          placeholder="Name"
+          placeholder="Team name..."
         ></input>
         <input
           type="text"
           name="shortName"
           value={this.state.shortName}
           onChange={this.handleChange}
-          placeholder="Short name"
+          placeholder="Team abbreviation..."
         ></input>
         <VenuesDropdown onChange={this.handleChange} />
         <button className="button-submit">Submit</button>

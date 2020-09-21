@@ -6,7 +6,7 @@ import DisplayList from "../components/lists/DisplayList";
 import MatchDisplay from "../displays/MatchDisplay";
 import PersonDisplay from "../displays/PersonDisplay";
 import TeamDisplay from "../displays/TeamDisplay";
-// import TournamentDisplay from "../displays/TournamentDisplay";
+import TournamentDisplay from "../displays/TournamentDisplay";
 import VenueDisplay from "../displays/VenueDisplay";
 import Request from "../helpers/request";
 
@@ -59,9 +59,9 @@ class DisplayPage extends Component {
     if (collection === "teams") {
       container = <TeamDisplay team={selectedItem} />;
     }
-    // if (collection === "tournaments") {
-    //   container = <TournamentDisplay tournament={selectedItem} />;
-    // }
+    if (collection === "tournaments") {
+      container = <TournamentDisplay tournament={selectedItem} />;
+    }
     if (collection === "venues") {
       container = <VenueDisplay venue={selectedItem} />;
     }

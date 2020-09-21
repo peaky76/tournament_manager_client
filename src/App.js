@@ -4,7 +4,6 @@ import "./App.css";
 
 import DisplayContainer from "./containers/DisplayContainer";
 import SubmissionContainer from "./containers/SubmissionContainer";
-import TournamentContainer from "./containers/TournamentContainer";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
 

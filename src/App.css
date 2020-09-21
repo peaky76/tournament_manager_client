@@ -93,6 +93,7 @@
 }
 
 #content-wrapper > section {
+  padding: 0;
   background-color: palegreen;
   border: 0.125rem solid black;
 }
@@ -110,4 +111,16 @@
 .display-list > li:hover {
   cursor: pointer;
   background-color: grey;
+}
+
+/* League tables */
+
+.league-table-column:first-child {
+  width: 10rem;
+}
+
+.league-table-column {
+  display: inline-block;
+  width: 3rem;
+  font-weight: bold;
 }

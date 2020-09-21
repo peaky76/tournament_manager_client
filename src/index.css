@@ -21,7 +21,8 @@ ul {
   padding: 0;
 }
 
-input {
+input,
+select {
   background-color: inherit;
   border: 0;
   margin-bottom: 1rem;

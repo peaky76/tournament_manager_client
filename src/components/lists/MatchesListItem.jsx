@@ -1,6 +1,6 @@
 import React from "react";
 const MatchesListItem = () => {
-  return <li>ALPHA ROVERS 3 BETA RANGERS 2</li>;
+  return <li>Alpha Rovers 3 Beta Utd 2</li>;
 };
 
 export default MatchesListItem;

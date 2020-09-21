@@ -1,12 +1,15 @@
 import React from "react";
 import ScorersListItem from "./ScorersListItem";
 
-const ScorersList = () => {
+const ScorersList = ({ header, scorers }) => {
+  const scorerNodes = scorers.map((scorer, index) => {
+    return <ScorersListItem key={index} scorer={scorer} />;
+  });
   return (
     <section>
       <ul>
-        <h3>Scorers</h3>
-        <ScorersListItem />
+        <h3>{header}</h3>
+        {scorerNodes}
       </ul>
     </section>
   );
