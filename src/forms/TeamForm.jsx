@@ -24,7 +24,9 @@ class TeamForm extends Component {
     const team = {
       name: this.state.name,
       shortName: this.state.shortName,
-      venue: this.state.venue,
+      venue: {
+        id:this.state.venue
+      }
     };
     this.props.handlePost(team);
   }
