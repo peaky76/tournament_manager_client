@@ -47,13 +47,6 @@ class TeamForm extends Component {
           placeholder="Short name"
         ></input>
         <VenuesDropdown />
-        {/* <input
-          type="text"
-          name="venue"
-          value={this.state.venue}
-          onChange={this.handleChange}
-          placeholder="Venue"
-        ></input> */}
         <button className="button-submit">Submit</button>
       </form>
     );

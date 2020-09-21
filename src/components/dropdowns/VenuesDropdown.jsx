@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Request from "../../helpers/request";
 
-// import Select from "react-select";
-
 class VenuesDropdown extends Component {
   constructor() {
     super();
@@ -17,6 +15,12 @@ class VenuesDropdown extends Component {
     const request = new Request();
     request.get("/api/venues").then((data) => {
       this.setState({ venues: data });
+    });
+  }
+
+  findItemById(id) {
+    return this.state.venues.find((item) => {
+      return item.id === parseInt(id);
     });
   }
 

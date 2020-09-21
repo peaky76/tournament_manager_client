@@ -25,8 +25,7 @@ class TournamentForm extends Component {
       name: this.state.name,
       sport: this.state.sport,
     };
-    console.log(tournament);
-    // this.props.handlePost(tournament);
+    this.props.handlePost(tournament);
   }
 
   render() {
@@ -39,7 +38,8 @@ class TournamentForm extends Component {
           onChange={this.handleChange}
           placeholder="Name"
         ></input>
-        <SportsDropdown onChange={this.handleChange} />
+        <SportsDropdown />
+        {/* <SportsDropdown name="sport" value={this.state.sport} onChange={this.handleChange} /> */}
         <button className="button-submit">Submit</button>
       </form>
     );
