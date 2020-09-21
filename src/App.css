@@ -107,3 +107,10 @@
 form > input {
   padding: 1rem 0;
 }
+
+/* Lists */
+
+.display-list > li:hover {
+  cursor: pointer;
+  background-color: grey;
+}

@@ -6,7 +6,7 @@ const DisplayList = ({ items, onClick }) => {
     return <DisplayListItem key={index} item={item} onClick={onClick} />;
   });
 
-  return <ul>{itemNodes}</ul>;
+  return <ul class="display-list">{itemNodes}</ul>;
 };
 
 export default DisplayList;
