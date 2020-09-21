@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Request from "../helpers/request";
 
+import Logo from "../components/Logo";
 import MatchForm from "../forms/MatchForm";
 import PersonForm from "../forms/PersonForm";
 import ScoreEventForm from "../forms/ScoreEventForm";
@@ -44,10 +45,7 @@ class SubmissionPage extends Component {
     return (
       <div id="submission-page" className="page">
         <section id="sidebar">
-          <div id="logo">
-            <img src="/images/soccer_icons/png/001-trophy.png" alt="Sportify logo" />
-            <h1>Sportify</h1>
-          </div>
+          <Logo />
         </section>
         <section id="main">{form}</section>
       </div>

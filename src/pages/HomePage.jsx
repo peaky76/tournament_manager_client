@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import FavouritesList from "../components/lists/FavouritesList";
+import Logo from "../components/Logo";
 import NavBar from "../NavBar.js";
 
 class HomePage extends Component {
@@ -12,10 +13,7 @@ class HomePage extends Component {
     return (
       <div id="homepage" className="page">
         <header id="homepage-header" className="page-header">
-          <div id="logo">
-            <img src="/images/soccer_icons/png/001-trophy.png" alt="Sportify logo" />
-            <h1>Sportify</h1>
-          </div>
+          <Logo />
           <h2>Tournament Management System</h2>
         </header>
         <section id="homepage-nav">

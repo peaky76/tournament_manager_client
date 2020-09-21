@@ -29,8 +29,8 @@
 
 #logo {
   position: relative;
-  height: 12rem;
-  width: 12rem;
+  height: 9rem;
+  width: 9rem;
 }
 
 #logo > * {
@@ -38,11 +38,11 @@
   width: 100%;
 }
 
-#logo > img {
+#logo-img {
   object-fit: contain;
 }
 
-#logo > h1 {
+#logo-text {
   position: absolute;
   top: 0;
   left: 0;

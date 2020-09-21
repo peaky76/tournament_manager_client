@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import Logo from "../components/Logo";
 import DisplayList from "../components/lists/DisplayList";
 import MatchContainer from "../containers/MatchContainer";
 import PersonContainer from "../containers/PersonContainer";
@@ -70,10 +71,7 @@ class DisplayPage extends Component {
     return (
       <div id="display-page" className="page">
         <section id="sidebar">
-          <div id="logo">
-            <img src="/images/soccer_icons/png/001-trophy.png" alt="Sportify logo" />
-            <h1>Sportify</h1>
-          </div>
+          <Logo />
           <h2>{collection}</h2>
           <DisplayList items={this.state.itemList} onClick={this.handleSelectItem} />
           <Link to={"/" + collection + "/new"}>Add new</Link>
