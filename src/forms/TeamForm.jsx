@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import VenuesDropdown from "../components/dropdowns/VenuesDropdown";
 
 class TeamForm extends Component {
   constructor() {
@@ -45,13 +46,14 @@ class TeamForm extends Component {
           onChange={this.handleChange}
           placeholder="Short name"
         ></input>
-        <input
+        <VenuesDropdown />
+        {/* <input
           type="text"
           name="venue"
           value={this.state.venue}
           onChange={this.handleChange}
           placeholder="Venue"
-        ></input>
+        ></input> */}
         <button className="button-submit">Submit</button>
       </form>
     );

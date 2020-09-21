@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import VenuesDropdown from "../components/dropdowns/VenuesDropdown";
 
 class MatchForm extends Component {
   constructor() {
@@ -61,13 +62,14 @@ class MatchForm extends Component {
           onChange={this.handleChange}
           placeholder="Score"
         ></input>
-        <input
+        <VenuesDropdown />
+        {/* <input
           type="text"
           name="venue"
           value={this.state.venue}
           onChange={this.handleChange}
           placeholder="Venue"
-        ></input>
+        ></input> */}
         <button className="button-submit">Submit</button>
       </form>
     );
