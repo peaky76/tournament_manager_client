@@ -9,7 +9,7 @@ class MatchForm extends Component {
       team2: "",
       score1: 0,
       score2: 0,
-      venue: "",
+      venueId: "",
     };
   }
 
@@ -26,7 +26,9 @@ class MatchForm extends Component {
       team2: this.state.team2,
       score1: this.state.score1,
       score2: this.state.score2,
-      venue: this.state.venue,
+      venue: {
+        id: this.state.venueId,
+      },
     };
     this.props.handlePost(match);
   }

@@ -7,22 +7,11 @@ class PersonForm extends Component {
     this.state = {
       firstName: "",
       lastName: "",
-      nationality: {},
+      countryId: "",
       dateOfBirth: null,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentDidMount() {
-    if (this.props.person) {
-      this.setState({
-        firstName: this.props.person.firstName,
-        lastName: this.props.person.lastName,
-        nationality: this.props.person.nationality,
-        dateOfBirth: this.props.person.dateOfBirth,
-      });
-    }
   }
 
   handleChange(event) {
@@ -36,8 +25,10 @@ class PersonForm extends Component {
     const person = {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
-      nationality: this.state.nationality,
       dateOfBirth: this.state.dateOfBirth,
+      nationality: {
+        id: this.state.countryId,
+      },
     };
     this.props.handlePost(person);
   }

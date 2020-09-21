@@ -32,7 +32,7 @@ class SportsDropdown extends Component {
       </option>
     ));
     return (
-      <select name="sport" onChange={this.handleChange}>
+      <select name="sportId" onChange={this.handleChange}>
         {options}
       </select>
     );

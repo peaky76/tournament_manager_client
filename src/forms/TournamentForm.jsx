@@ -7,7 +7,7 @@ class TournamentForm extends Component {
     super();
     this.state = {
       name: "",
-      sport: "",
+      sportId: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,7 +23,9 @@ class TournamentForm extends Component {
     event.preventDefault();
     const tournament = {
       name: this.state.name,
-      sport: this.state.sport,
+      sport: {
+        id: this.state.sportId,
+      },
     };
     this.props.handlePost(tournament);
   }

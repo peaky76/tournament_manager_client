@@ -7,7 +7,7 @@ class TeamForm extends Component {
     this.state = {
       name: "",
       shortName: "",
-      venue: "",
+      venueId: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,8 +25,8 @@ class TeamForm extends Component {
       name: this.state.name,
       shortName: this.state.shortName,
       venue: {
-        id:this.state.venue
-      }
+        id: this.state.venueId,
+      },
     };
     this.props.handlePost(team);
   }

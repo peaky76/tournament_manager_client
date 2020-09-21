@@ -32,7 +32,7 @@ class VenuesDropdown extends Component {
       </option>
     ));
     return (
-      <select name="venue" onChange={this.handleChange}>
+      <select name="venueId" onChange={this.handleChange}>
         {options}
       </select>
     );

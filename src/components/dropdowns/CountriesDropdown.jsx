@@ -6,7 +6,7 @@ class CountriesDropdown extends Component {
     super();
     this.state = {
       countries: [],
-      // selectedCountryId: "",
+      selectedCountryId: "",
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -18,16 +18,10 @@ class CountriesDropdown extends Component {
     });
   }
 
-  //   findItemById(id) {
-  //     return this.state.itemList.find((item) => {
-  //       return item.id === parseInt(id);
-  //     });
-  //   }
-
   handleChange(event) {
-    //  this.setState({
-    //    selectedCountryId: event.target.value,
-    //  });
+    this.setState({
+      selectedCountryId: event.target.value,
+    });
     this.props.onChange(event);
   }
 
@@ -38,7 +32,7 @@ class CountriesDropdown extends Component {
       </option>
     ));
     return (
-      <select name="nationality" onChange={this.handleChange}>
+      <select name="countryId" onChange={this.handleChange}>
         {options}
       </select>
     );
