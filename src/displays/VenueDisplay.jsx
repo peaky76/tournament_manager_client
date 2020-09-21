@@ -1,5 +1,7 @@
 import React from "react";
-import MatchesList from "../components/lists/MatchesList";
+
+import FixturesList from "../components/lists/FixturesList";
+import ResultsList from "../components/lists/ResultsList";
 
 const VenueDisplay = ({ venue }) => {
   return (
@@ -8,8 +10,8 @@ const VenueDisplay = ({ venue }) => {
         <h1>{venue.name}</h1>
       </header>
       <div id="content-wrapper">
-        <MatchesList header="Recent Matches" matches={null} />
-        <MatchesList header="Upcoming Fixtures" matches={null} />
+        <ResultsList header="Recent Matches" matches={null} />
+        <FixturesList header="Upcoming Fixtures" matches={null} />
       </div>
     </>
   );

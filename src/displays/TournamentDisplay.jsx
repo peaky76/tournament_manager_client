@@ -1,10 +1,15 @@
 import React from "react";
 
-import MatchesList from "../components/lists/MatchesList";
+import FixturesList from "../components/lists/FixturesList";
+import ResultsList from "../components/lists/ResultsList";
 import LeagueTable from "../components/tournaments/LeagueTable";
 import ScorersList from "../components/lists/ScorersList";
 
 const TournamentDisplay = ({ tournament }) => {
+  const results = tournament.matches.filter((match) => match.isCompleted);
+  const fixtures = tournament.matches.filter((match) => !match.isCompleted);
+  let resultsAddButton = <button className="button-add">Add</button>;
+  let fixturesAddButton = <button className="button-add">Add</button>;
   return (
     <>
       <header>
@@ -12,8 +17,10 @@ const TournamentDisplay = ({ tournament }) => {
       </header>
       <div id="content-wrapper">
         <LeagueTable />
-        <MatchesList header="Results" matches={tournament.matches} />
-        <MatchesList header="Fixtures" matches={tournament.matches} />
+        <ResultsList header="Results" matches={results} />
+        <div>{resultsAddButton}</div>
+        <FixturesList header="Fixtures" matches={fixtures} />
+        <div>{fixturesAddButton}</div>
         <ScorersList header="Top Scorers" scorers={null} />
       </div>
     </>

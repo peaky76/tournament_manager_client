@@ -1,10 +1,17 @@
 import React from "react";
 
-import MatchesList from "../components/lists/MatchesList";
+import FixturesList from "../components/lists/FixturesList";
+import ResultsList from "../components/lists/ResultsList";
 import ScorersList from "../components/lists/ScorersList";
 import PlayersList from "../components/lists/PlayersList";
 
 const TeamDisplay = ({ team }) => {
+  let results,
+    fixtures = null;
+  if (team.matches) {
+    results = team.matches.filter((match) => match.isCompleted);
+    fixtures = team.matches.filter((match) => !match.isCompleted);
+  }
   return (
     <>
       <header>
@@ -13,8 +20,8 @@ const TeamDisplay = ({ team }) => {
       </header>
       <div id="content-wrapper">
         <PlayersList players={team.players} />
-        <MatchesList header="Results" matches={team.matches} />
-        <MatchesList header="Fixtures" matches={team.matches} />
+        <ResultsList header="Results" matches={results} />
+        <FixturesList header="Fixtures" matches={fixtures} />
         <ScorersList header="Top Scorers" scorers={null} />
       </div>
     </>
