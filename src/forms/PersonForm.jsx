@@ -59,7 +59,7 @@ class PersonForm extends Component {
           onChange={this.handleChange}
           placeholder="Last name"
         ></input>
-        <CountriesDropdown />
+        <CountriesDropdown onChange={this.handleChange} />
         <input type="date" id="input-dob" name="dateOfBirth" onChange={this.handleChange} />
         <button className="button-submit">Submit</button>
       </form>

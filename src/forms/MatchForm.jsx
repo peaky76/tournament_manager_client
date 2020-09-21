@@ -62,7 +62,7 @@ class MatchForm extends Component {
           onChange={this.handleChange}
           placeholder="Score"
         ></input>
-        <VenuesDropdown />
+        <VenuesDropdown onChange={this.handleChange} />
         <button className="button-submit">Submit</button>
       </form>
     );

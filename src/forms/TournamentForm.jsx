@@ -38,7 +38,7 @@ class TournamentForm extends Component {
           onChange={this.handleChange}
           placeholder="Name"
         ></input>
-        <SportsDropdown />
+        <SportsDropdown onChange={this.handleChange} />
         <button className="button-submit">Submit</button>
       </form>
     );

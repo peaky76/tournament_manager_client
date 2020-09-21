@@ -7,7 +7,7 @@ class TeamForm extends Component {
     this.state = {
       name: "",
       shortName: "",
-      venue: null,
+      venue: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,7 +46,7 @@ class TeamForm extends Component {
           onChange={this.handleChange}
           placeholder="Short name"
         ></input>
-        <VenuesDropdown />
+        <VenuesDropdown onChange={this.handleChange} />
         <button className="button-submit">Submit</button>
       </form>
     );

@@ -22,6 +22,7 @@ class VenuesDropdown extends Component {
     this.setState({
       selectedVenueId: event.target.value,
     });
+    this.props.onChange(event);
   }
 
   render() {
@@ -30,7 +31,11 @@ class VenuesDropdown extends Component {
         {venue.name}
       </option>
     ));
-    return <select onChange={this.handleChange}>{options}</select>;
+    return (
+      <select name="venue" onChange={this.handleChange}>
+        {options}
+      </select>
+    );
   }
 }
 

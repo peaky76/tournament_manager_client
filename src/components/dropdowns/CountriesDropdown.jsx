@@ -18,10 +18,17 @@ class CountriesDropdown extends Component {
     });
   }
 
+  findItemById(id) {
+    return this.state.itemList.find((item) => {
+      return item.id === parseInt(id);
+    });
+  }
+
   handleChange(event) {
     this.setState({
       selectedCountryId: event.target.value,
     });
+    this.props.onChange(event);
   }
 
   render() {
@@ -30,7 +37,11 @@ class CountriesDropdown extends Component {
         {country.name}
       </option>
     ));
-    return <select onChange={this.handleChange}>{options}</select>;
+    return (
+      <select name="nationality" onChange={this.handleChange}>
+        {options}
+      </select>
+    );
   }
 }
 

@@ -22,6 +22,7 @@ class SportsDropdown extends Component {
     this.setState({
       selectedSportId: event.target.value,
     });
+    this.props.onChange(event);
   }
 
   render() {
@@ -30,7 +31,11 @@ class SportsDropdown extends Component {
         {sport.name}
       </option>
     ));
-    return <select onChange={this.handleChange}>{options}</select>;
+    return (
+      <select name="sport" onChange={this.handleChange}>
+        {options}
+      </select>
+    );
   }
 }
 
