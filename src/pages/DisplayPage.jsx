@@ -70,6 +70,10 @@ class DisplayPage extends Component {
     return (
       <div id="display-page" className="page">
         <section id="sidebar">
+          <div id="logo">
+            <img src="/images/soccer_icons/png/001-trophy.png" alt="Sportify logo" />
+            <h1>Sportify</h1>
+          </div>
           <h2>{collection}</h2>
           <DisplayList items={this.state.itemList} onClick={this.handleSelectItem} />
           <Link to={"/" + collection + "/new"}>Add new</Link>
