@@ -73,7 +73,11 @@ class DisplayPage extends Component {
         <section id="sidebar">
           <Logo />
           <h2>{collection}</h2>
-          <DisplayList items={this.state.itemList} onClick={this.handleSelectItem} />
+          <DisplayList
+            collection={collection}
+            items={this.state.itemList}
+            onClick={this.handleSelectItem}
+          />
           <Link to={"/" + collection + "/new"}>Add new</Link>
         </section>
         <section id="main">{container}</section>

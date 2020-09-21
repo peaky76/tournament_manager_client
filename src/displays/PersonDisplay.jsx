@@ -1,6 +1,6 @@
 import React from "react";
 
-import PersonForm from "../forms/PersonForm";
+import PersonDetails from "../components/PersonDetails";
 import ScoreEventsList from "../components/lists/ScoreEventsList";
 
 const PersonDisplay = ({ person }) => {
@@ -12,8 +12,7 @@ const PersonDisplay = ({ person }) => {
         </h1>
       </header>
       <div id="content-wrapper">
-        <PersonForm person={person} />
-        {/* <PersonDetails person={person} /> */}
+        <PersonDetails person={person} />
         <ScoreEventsList scoreEvents={null} />
       </div>
     </>

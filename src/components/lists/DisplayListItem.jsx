@@ -1,11 +1,7 @@
 import React from "react";
 
-const DisplayListItem = ({ item, onClick }) => {
-  return (
-    <li onClick={() => onClick(item.id)}>
-      {item.id}: {item.name}
-    </li>
-  );
+const DisplayListItem = ({ value, label, onClick }) => {
+  return <li onClick={() => onClick(value)}>{label}</li>;
 };
 
 export default DisplayListItem;

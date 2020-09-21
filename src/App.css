@@ -104,6 +104,12 @@
   width: 75%;
 }
 
+#form-person-create > #first-name,
+#form-person-create > #last-name {
+  display: inline;
+  margin-right: 1rem;
+}
+
 /* Lists */
 
 .display-list > li:hover {
