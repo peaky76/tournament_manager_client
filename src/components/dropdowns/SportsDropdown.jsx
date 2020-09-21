@@ -1,25 +1,36 @@
 import React, { Component } from "react";
+import Request from "../../helpers/request";
 
 class SportsDropdown extends Component {
   constructor() {
     super();
     this.state = {
-      sports: ["Football", "Rugby League", "Rugby Union", "Basketball", "Ice Hockey"],
+      sports: [],
+      selectedSportId: "",
     };
-    this.handleSelect = this.handleSelect.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleSelect(event) {
-    //  this.props.handleChange(event);
+  componentDidMount() {
+    const request = new Request();
+    request.get("/api/sports").then((data) => {
+      this.setState({ sports: data });
+    });
+  }
+
+  handleChange(event) {
+    this.setState({
+      selectedSportId: event.target.value,
+    });
   }
 
   render() {
     const options = this.state.sports.map((sport, index) => (
-      <option key={index} value={sport}>
-        {sport}
+      <option key={index} value={sport.id}>
+        {sport.name}
       </option>
     ));
-    return <select onChange={this.handleSelect}>{options}</select>;
+    return <select onChange={this.handleChange}>{options}</select>;
   }
 }
 

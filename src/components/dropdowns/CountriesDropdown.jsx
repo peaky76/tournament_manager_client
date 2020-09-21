@@ -1,37 +1,37 @@
 import React, { Component } from "react";
 import Request from "../../helpers/request";
 
-class VenuesDropdown extends Component {
+class CountriesDropdown extends Component {
   constructor() {
     super();
     this.state = {
-      venues: [],
-      selectedVenueId: "",
+      countries: [],
+      selectedCountryId: "",
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
     const request = new Request();
-    request.get("/api/venues").then((data) => {
-      this.setState({ venues: data });
+    request.get("/api/countries").then((data) => {
+      this.setState({ countries: data });
     });
   }
 
   handleChange(event) {
     this.setState({
-      selectedVenueId: event.target.value,
+      selectedCountryId: event.target.value,
     });
   }
 
   render() {
-    const options = this.state.venues.map((venue, index) => (
-      <option key={index} value={venue.id}>
-        {venue.name}
+    const options = this.state.countries.map((country, index) => (
+      <option key={index} value={country.id}>
+        {country.name}
       </option>
     ));
     return <select onChange={this.handleChange}>{options}</select>;
   }
 }
 
-export default VenuesDropdown;
+export default CountriesDropdown;

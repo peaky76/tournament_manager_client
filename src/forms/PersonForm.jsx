@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CountriesDropdown from "../components/dropdowns/CountriesDropdown";
 
 class PersonForm extends Component {
   constructor() {
@@ -58,13 +59,7 @@ class PersonForm extends Component {
           onChange={this.handleChange}
           placeholder="Last name"
         ></input>
-        <input
-          type="text"
-          name="nationality"
-          value={this.state.nationality}
-          onChange={this.handleChange}
-          placeholder="Nationality"
-        ></input>
+        <CountriesDropdown />
         <input type="date" id="input-dob" name="dateOfBirth" onChange={this.handleChange} />
         <button className="button-submit">Submit</button>
       </form>
