@@ -9,6 +9,7 @@ const TeamDisplay = ({ team }) => {
     <>
       <header>
         <h1>{team.name}</h1>
+        {/* <h2>{team.venue}</h2> */}
       </header>
       <div id="content-wrapper">
         <PlayersList players={team.players} />

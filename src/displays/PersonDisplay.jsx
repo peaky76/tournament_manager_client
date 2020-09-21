@@ -1,7 +1,7 @@
 import React from "react";
 
 import PersonForm from "../forms/PersonForm";
-import PersonGoals from "../components/people/PersonGoals";
+import ScoreEventsList from "../components/lists/ScoreEventsList";
 
 const PersonDisplay = ({ person }) => {
   return (
@@ -14,7 +14,7 @@ const PersonDisplay = ({ person }) => {
       <div id="content-wrapper">
         <PersonForm person={person} />
         {/* <PersonDetails person={person} /> */}
-        <PersonGoals />
+        <ScoreEventsList scoreEvents={null} />
       </div>
     </>
   );
