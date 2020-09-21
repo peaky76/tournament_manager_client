@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import Request from "../../helpers/request";
-import VenuesDropdownItem from "./VenuesDropdownItem";
+
+// import Select from "react-select";
 
 class VenuesDropdown extends Component {
   constructor() {
     super();
     this.state = {
       venues: [],
-      selectedVenueID: "",
+      selectedVenueId: "",
     };
-    this.handleSelect = this.handleSelect.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -19,17 +20,19 @@ class VenuesDropdown extends Component {
     });
   }
 
-  handleSelect(id) {
+  handleChange(event) {
     this.setState({
-      selectedVenueId: id,
+      selectedVenueId: event.target.value,
     });
   }
 
   render() {
-    const options = this.state.venues.map((venue, index) => {
-      return <VenuesDropdownItem key={index} item={venue} onSelect={this.handleSelect} />;
-    });
-    return <select>{options}</select>;
+    const options = this.state.venues.map((venue) => (
+      <option key={venue.id} value={venue.id}>
+        {venue.name}
+      </option>
+    ));
+    return <select onChange={this.handleChange}>{options}</select>;
   }
 }
 

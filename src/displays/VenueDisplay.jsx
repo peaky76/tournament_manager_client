@@ -1,6 +1,6 @@
 import React from "react";
 
-const VenueContainer = ({ venue }) => {
+const VenueDisplay = ({ venue }) => {
   return (
     <>
       <header>
@@ -11,4 +11,4 @@ const VenueContainer = ({ venue }) => {
   );
 };
 
-export default VenueContainer;
+export default VenueDisplay;

@@ -3,7 +3,7 @@ import React from "react";
 import PersonForm from "../forms/PersonForm";
 import PersonGoals from "../components/people/PersonGoals";
 
-const PersonContainer = ({ person }) => {
+const PersonDisplay = ({ person }) => {
   return (
     <>
       <header>
@@ -20,4 +20,4 @@ const PersonContainer = ({ person }) => {
   );
 };
 
-export default PersonContainer;
+export default PersonDisplay;

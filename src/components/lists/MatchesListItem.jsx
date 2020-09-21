@@ -1,6 +1,6 @@
 import React from "react";
-const ResultsListItem = () => {
+const MatchesListItem = () => {
   return <li>ALPHA ROVERS 3 BETA RANGERS 2</li>;
 };
 
-export default ResultsListItem;
+export default MatchesListItem;

@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import DisplayPage from "./pages/DisplayPage";
+
+import DisplayContainer from "./containers/DisplayContainer";
+import SubmissionContainer from "./containers/SubmissionContainer";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
-import SubmissionPage from "./pages/SubmissionPage";
 
 function App() {
   return (
@@ -12,9 +13,9 @@ function App() {
       <>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/:collection/new" component={SubmissionPage} />
-          <Route path="/:collection/:id" component={DisplayPage} />
-          <Route path="/:collection" component={DisplayPage} />
+          <Route exact path="/:collection/new" component={SubmissionContainer} />
+          <Route path="/:collection/:id" component={DisplayContainer} />
+          <Route path="/:collection" component={DisplayContainer} />
           <Route component={ErrorPage} />
         </Switch>
       </>

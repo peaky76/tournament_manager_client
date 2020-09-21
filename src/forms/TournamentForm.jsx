@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import SportsDropdown from "../components/dropdowns/SportsDropdown";
+
 class TournamentForm extends Component {
   constructor() {
     super();
@@ -23,7 +25,8 @@ class TournamentForm extends Component {
       name: this.state.name,
       sport: this.state.sport,
     };
-    this.props.handlePost(tournament);
+    console.log(tournament);
+    // this.props.handlePost(tournament);
   }
 
   render() {
@@ -31,16 +34,12 @@ class TournamentForm extends Component {
       <form id="form-tournament-create" className="form-create" onSubmit={this.handleSubmit}>
         <input
           type="text"
+          name="name"
           value={this.state.name}
           onChange={this.handleChange}
           placeholder="Name"
         ></input>
-        <input
-          type="text"
-          value={this.state.sport}
-          onChange={this.handleChange}
-          placeholder="Sport"
-        ></input>
+        <SportsDropdown onChange={this.handleChange} />
         <button className="button-submit">Submit</button>
       </form>
     );

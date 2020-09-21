@@ -1,6 +1,6 @@
 import React from "react";
 
-const MatchContainer = ({ match }) => {
+const MatchDisplay = ({ match }) => {
   return (
     <>
       <header>
@@ -12,4 +12,4 @@ const MatchContainer = ({ match }) => {
   );
 };
 
-export default MatchContainer;
+export default MatchDisplay;

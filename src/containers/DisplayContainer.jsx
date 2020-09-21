@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 import Logo from "../components/Logo";
 import DisplayList from "../components/lists/DisplayList";
-import MatchContainer from "../containers/MatchContainer";
-import PersonContainer from "../containers/PersonContainer";
-import TeamContainer from "../containers/TeamContainer";
-import TournamentContainer from "../containers/TournamentContainer";
-import VenueContainer from "../containers/VenueContainer";
+import MatchDisplay from "../displays/MatchDisplay";
+import PersonDisplay from "../displays/PersonDisplay";
+import TeamDisplay from "../displays/TeamDisplay";
+// import TournamentDisplay from "../displays/TournamentDisplay";
+import VenueDisplay from "../displays/VenueDisplay";
 import Request from "../helpers/request";
 
 class DisplayPage extends Component {
@@ -51,19 +51,19 @@ class DisplayPage extends Component {
     let container = null;
 
     if (collection === "matches") {
-      container = <MatchContainer match={selectedItem} />;
+      container = <MatchDisplay match={selectedItem} />;
     }
     if (collection === "people") {
-      container = <PersonContainer person={selectedItem} />;
+      container = <PersonDisplay person={selectedItem} />;
     }
     if (collection === "teams") {
-      container = <TeamContainer team={selectedItem} />;
+      container = <TeamDisplay team={selectedItem} />;
     }
-    if (collection === "tournaments") {
-      container = <TournamentContainer tournament={selectedItem} />;
-    }
+    // if (collection === "tournaments") {
+    //   container = <TournamentDisplay tournament={selectedItem} />;
+    // }
     if (collection === "venues") {
-      container = <VenueContainer venue={selectedItem} />;
+      container = <VenueDisplay venue={selectedItem} />;
     }
     if (!selectedItem) {
       container = null;
