@@ -12,9 +12,9 @@ const TeamDisplay = ({ team }) => {
       </header>
       <div id="content-wrapper">
         <PlayersList players={team.players} />
-        <MatchesList />
-        <MatchesList />
-        <ScorersList />
+        <MatchesList header="Results" matches={team.matches} />
+        <MatchesList header="Fixtures" matches={team.matches} />
+        <ScorersList header="Top Scorers" scorers={null} />
       </div>
     </>
   );

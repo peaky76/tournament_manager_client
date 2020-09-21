@@ -23,8 +23,9 @@ ul {
 
 input,
 select {
+  display: block;
+  margin-bottom: 1rem;
   background-color: inherit;
   border: 0;
-  margin-bottom: 1rem;
   font-size: 1rem;
 }

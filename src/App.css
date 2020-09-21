@@ -102,8 +102,6 @@
 
 .form-create {
   width: 75%;
-  display: flex;
-  flex-direction: column;
 }
 
 /* Lists */
