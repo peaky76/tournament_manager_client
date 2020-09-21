@@ -12,14 +12,14 @@ class HomePage extends Component {
   render() {
     return (
       <div id="homepage" className="page">
-        <header id="homepage-header" className="page-header">
-          <Logo />
-          <h2>Tournament Management System</h2>
-        </header>
-        <section id="homepage-nav">
+        <section id="sidebar">
           <NavBar />
         </section>
-        <section id="homepage-fav">
+        <section id="main">
+          <header id="homepage-header" className="page-header">
+            <Logo />
+            <h2>Tournament Management System</h2>
+          </header>
           <FavouritesList />
         </section>
       </div>

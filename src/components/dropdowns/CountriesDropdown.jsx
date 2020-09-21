@@ -6,7 +6,7 @@ class CountriesDropdown extends Component {
     super();
     this.state = {
       countries: [],
-      selectedCountryId: "",
+      // selectedCountryId: "",
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -18,22 +18,22 @@ class CountriesDropdown extends Component {
     });
   }
 
-  findItemById(id) {
-    return this.state.itemList.find((item) => {
-      return item.id === parseInt(id);
-    });
-  }
+  //   findItemById(id) {
+  //     return this.state.itemList.find((item) => {
+  //       return item.id === parseInt(id);
+  //     });
+  //   }
 
   handleChange(event) {
-    this.setState({
-      selectedCountryId: event.target.value,
-    });
+    //  this.setState({
+    //    selectedCountryId: event.target.value,
+    //  });
     this.props.onChange(event);
   }
 
   render() {
     const options = this.state.countries.map((country, index) => (
-      <option key={index} value={country.id}>
+      <option key={index} value={country}>
         {country.name}
       </option>
     ));

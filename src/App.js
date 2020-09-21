@@ -4,6 +4,7 @@ import "./App.css";
 
 import DisplayContainer from "./containers/DisplayContainer";
 import SubmissionContainer from "./containers/SubmissionContainer";
+import TournamentContainer from "./containers/TournamentContainer";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
 
@@ -13,6 +14,7 @@ function App() {
       <>
         <Switch>
           <Route exact path="/" component={HomePage} />
+
           <Route exact path="/:collection/new" component={SubmissionContainer} />
           <Route path="/:collection/:id" component={DisplayContainer} />
           <Route path="/:collection" component={DisplayContainer} />

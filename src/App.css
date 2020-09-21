@@ -7,10 +7,12 @@
 }
 
 .page {
-  width: 60%;
-  margin: auto;
+  width: 80%;
+  min-height: 80vh;
+  margin-left: 10%;
   display: flex;
-  flex-wrap: wrap;
+  background-color: whitesmoke;
+  border: 1px solid black;
 }
 
 .page-header {
@@ -55,12 +57,11 @@
 /* Other pages */
 #display-page,
 #submission-page {
-  width: 80%;
 }
 
 #sidebar,
 #main {
-  /* padding: 1rem; */
+  min-height: 80%;
 }
 
 #sidebar {
@@ -102,10 +103,6 @@
   width: 75%;
   display: flex;
   flex-direction: column;
-}
-
-form > input {
-  padding: 1rem 0;
 }
 
 /* Lists */

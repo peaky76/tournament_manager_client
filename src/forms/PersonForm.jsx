@@ -7,7 +7,7 @@ class PersonForm extends Component {
     this.state = {
       firstName: "",
       lastName: "",
-      nationality: "",
+      nationality: {},
       dateOfBirth: null,
     };
     this.handleChange = this.handleChange.bind(this);

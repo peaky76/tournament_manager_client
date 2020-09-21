@@ -17,6 +17,8 @@ class SubmissionPage extends Component {
     this.handlePost = this.handlePost.bind(this);
   }
 
+  getSingular(collection) {}
+
   handlePost(item) {
     const request = new Request();
     console.log(item);
@@ -27,6 +29,7 @@ class SubmissionPage extends Component {
 
   render() {
     let collection = this.props.match.params.collection;
+    let singular = collection.split("").pop();
     let form;
     if (collection === "matches") {
       form = <MatchForm handlePost={this.handlePost} />;
@@ -48,7 +51,10 @@ class SubmissionPage extends Component {
         <section id="sidebar">
           <Logo />
         </section>
-        <section id="main">{form}</section>
+        <section id="main">
+          <h2>Add new {singular}</h2>
+          {form}
+        </section>
       </div>
     );
   }
