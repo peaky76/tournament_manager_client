@@ -37,7 +37,7 @@ class PersonForm extends Component {
     return (
       <form id="form-person-create" className="form-create" onSubmit={this.handleSubmit}>
         <input
-          id="first-name"
+          className="input-inline"
           type="text"
           name="firstName"
           value={this.state.firstName}
@@ -45,7 +45,7 @@ class PersonForm extends Component {
           placeholder="First name"
         ></input>
         <input
-          id="last-name"
+          className="input-inline"
           type="text"
           name="lastName"
           value={this.state.lastName}

@@ -6,7 +6,6 @@ class CountriesDropdown extends Component {
     super();
     this.state = {
       countries: [],
-      selectedCountryId: "",
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -19,20 +18,20 @@ class CountriesDropdown extends Component {
   }
 
   handleChange(event) {
-    this.setState({
-      selectedCountryId: event.target.value,
-    });
     this.props.onChange(event);
   }
 
   render() {
     const options = this.state.countries.map((country, index) => (
-      <option key={index} value={country}>
+      <option key={index} value={country.id}>
         {country.name}
       </option>
     ));
     return (
       <select name="countryId" onChange={this.handleChange}>
+        <option disabled selected value>
+          Select country...
+        </option>
         {options}
       </select>
     );

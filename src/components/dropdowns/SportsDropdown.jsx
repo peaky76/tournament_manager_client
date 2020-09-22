@@ -6,7 +6,6 @@ class SportsDropdown extends Component {
     super();
     this.state = {
       sports: [],
-      selectedSportId: "",
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -19,9 +18,6 @@ class SportsDropdown extends Component {
   }
 
   handleChange(event) {
-    this.setState({
-      selectedSportId: event.target.value,
-    });
     this.props.onChange(event);
   }
 
@@ -33,6 +29,9 @@ class SportsDropdown extends Component {
     ));
     return (
       <select name="sportId" onChange={this.handleChange}>
+        <option disabled selected value>
+          Select sport...
+        </option>
         {options}
       </select>
     );

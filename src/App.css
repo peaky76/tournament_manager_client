@@ -100,15 +100,27 @@
 
 /* Forms */
 
-.form-create {
+form {
   width: 75%;
 }
 
-#form-person-create > #first-name,
-#form-person-create > #last-name,
+input,
+select {
+  display: block;
+  margin-bottom: 1rem;
+  background-color: inherit;
+  border: 0;
+  font-size: 1rem;
+}
+
+.input-inline,
 #form-fixture-create > input {
   display: inline;
   margin-right: 1rem;
+}
+
+input[type="number"] {
+  width: 2rem;
 }
 
 /* Lists */
