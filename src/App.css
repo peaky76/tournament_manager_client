@@ -105,7 +105,8 @@
 }
 
 #form-person-create > #first-name,
-#form-person-create > #last-name {
+#form-person-create > #last-name,
+#form-fixture-create > input {
   display: inline;
   margin-right: 1rem;
 }

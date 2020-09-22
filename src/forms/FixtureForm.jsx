@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import VenuesDropdown from "../components/dropdowns/VenuesDropdown";
+
+import TeamsDropdown from "../components/dropdowns/TeamsDropdown";
+// import VenuesDropdown from "../components/dropdowns/VenuesDropdown";
 
 class FixtureForm extends Component {
   constructor() {
@@ -7,7 +9,6 @@ class FixtureForm extends Component {
     this.state = {
       team1: "",
       team2: "",
-      venueId: "",
     };
   }
 
@@ -31,8 +32,11 @@ class FixtureForm extends Component {
 
   render() {
     return (
-      <form id="form-match-create" className="form-create" onSubmit={this.handleSubmit}>
-        <input
+      <form id="form-fixture-create" className="form-create" onSubmit={this.handleSubmit}>
+        <TeamsDropdown />
+        <TeamsDropdown />
+
+        {/* <input
           type="text"
           name="team1"
           value={this.state.team1}
@@ -45,8 +49,8 @@ class FixtureForm extends Component {
           value={this.state.team2}
           onChange={this.handleChange}
           placeholder="Team B"
-        ></input>
-        <VenuesDropdown onChange={this.handleChange} />
+        ></input> */}
+        {/* <VenuesDropdown onChange={this.handleChange} /> */}
         <button className="button-submit">Submit</button>
       </form>
     );
