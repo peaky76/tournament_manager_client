@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import FixturesList from "../components/lists/FixturesList";
 import ResultsList from "../components/lists/ResultsList";
@@ -9,7 +10,11 @@ const TournamentDisplay = ({ tournament }) => {
   const results = tournament.matches.filter((match) => match.isCompleted);
   const fixtures = tournament.matches.filter((match) => !match.isCompleted);
   let resultsAddButton = <button className="button-add">Add</button>;
-  let fixturesAddButton = <button className="button-add">Add</button>;
+  let fixturesAddButton = (
+    <button className="button-add">
+      <Link to="/fixtures/new">Add</Link>
+    </button>
+  );
   return (
     <>
       <header>

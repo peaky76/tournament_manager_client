@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Request from "../helpers/request";
 
 import Logo from "../components/Logo";
+import FixtureForm from "../forms/FixtureForm";
 import MatchForm from "../forms/MatchForm";
 import PersonForm from "../forms/PersonForm";
 import ScoreEventForm from "../forms/ScoreEventForm";
@@ -43,8 +44,8 @@ class SubmissionPage extends Component {
     let collection = this.props.match.params.collection;
     let singular = this.getSingularOfCollection();
     let form;
-    if (collection === "matches") {
-      form = <MatchForm handlePost={this.handlePost} />;
+    if (collection === "fixtures") {
+      form = <FixtureForm handlePost={this.handlePost} />;
     }
     if (collection === "people") {
       form = <PersonForm handlePost={this.handlePost} />;

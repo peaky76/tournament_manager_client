@@ -50,9 +50,6 @@ class DisplayPage extends Component {
     let selectedItem = this.findItemById(this.state.selectedItemId);
     let container = null;
 
-    if (collection === "matches") {
-      container = <MatchDisplay match={selectedItem} />;
-    }
     if (collection === "people") {
       container = <PersonDisplay person={selectedItem} />;
     }
