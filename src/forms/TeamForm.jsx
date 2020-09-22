@@ -48,7 +48,7 @@ class TeamForm extends Component {
           onChange={this.handleChange}
           placeholder="Team abbreviation..."
         ></input>
-        <VenuesDropdown onChange={this.handleChange} />
+        <VenuesDropdown defaultText="Home venue..." onChange={this.handleChange} />
         <button className="button-submit">Submit</button>
       </form>
     );

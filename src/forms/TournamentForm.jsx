@@ -42,7 +42,7 @@ class TournamentForm extends Component {
           onChange={this.handleChange}
           placeholder="Name"
         ></input>
-        <SportsDropdown onChange={this.handleChange} />
+        <SportsDropdown defaultText="Venue" onChange={this.handleChange} />
         <h4>League Settings</h4>
         <span>Points per win: </span>
         <input

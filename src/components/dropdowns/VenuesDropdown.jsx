@@ -30,7 +30,7 @@ class VenuesDropdown extends Component {
     return (
       <select name="venueId" onChange={this.handleChange}>
         <option disabled selected value>
-          Select venue...
+          {this.props.defaultText}
         </option>
         {options}
       </select>
