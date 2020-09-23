@@ -13,7 +13,6 @@ function App() {
       <>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          {/* <Route path="/tournaments/:id/fixture" */}
           <Route exact path="/:collection/new" component={SubmissionContainer} />
           <Route path="/:collection/:id" component={DisplayContainer} />
           <Route path="/:collection" component={DisplayContainer} />

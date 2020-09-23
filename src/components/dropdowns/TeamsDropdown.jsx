@@ -11,11 +11,14 @@ class TeamsDropdown extends Component {
   }
 
   render() {
-    const options = this.props.teams.map((team, index) => (
-      <option key={index} value={team.id}>
-        {team.name}
-      </option>
-    ));
+    let options = <option></option>;
+    if (this.props.teams) {
+      options = this.props.teams.map((team, index) => (
+        <option key={index} value={team.id}>
+          {team.name}
+        </option>
+      ));
+    }
     return (
       <select name="teamId" onChange={this.handleChange}>
         <option disabled selected value>
