@@ -28,13 +28,11 @@ class TournamentTable extends Component {
       tableRows = this.state.table.rows.map((row, index) => {
         return <LeagueTableRow key={index} row={row} />;
       });
-
-      // tableRows = this.state.table.rows.map((col) => <span className="league-table-column">{col}</span>);
     }
 
     return (
       <section>
-        <div className="table-heading">{headings}</div>
+        <div className="league-table-heading">{headings}</div>
         <div className="table-row">{tableRows}</div>
       </section>
     );

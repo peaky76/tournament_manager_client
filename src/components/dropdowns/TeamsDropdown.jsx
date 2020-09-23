@@ -22,7 +22,7 @@ class TeamsDropdown extends Component {
     return (
       <select name="teamId" onChange={this.handleChange}>
         <option disabled selected value>
-          Select team...
+          {this.props.defaultText}
         </option>
         {options}
       </select>

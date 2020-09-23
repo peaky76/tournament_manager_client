@@ -33,25 +33,9 @@ class FixtureForm extends Component {
   render() {
     return (
       <form id="form-fixture-create" className="form-create" onSubmit={this.handleSubmit}>
-        <TeamsDropdown />
-        <TeamsDropdown />
-
-        {/* <input
-          type="text"
-          name="team1"
-          value={this.state.team1}
-          onChange={this.handleChange}
-          placeholder="Team A"
-        ></input>
-        <input
-          type="text"
-          name="team2"
-          value={this.state.team2}
-          onChange={this.handleChange}
-          placeholder="Team B"
-        ></input> */}
-        {/* <VenuesDropdown onChange={this.handleChange} /> */}
-        <button className="button-submit">Submit</button>
+        <TeamsDropdown defaultText="Home team..." />
+        <TeamsDropdown defaultText="Away team..." />
+        <button className="button-submit">Add fixture</button>
       </form>
     );
   }
