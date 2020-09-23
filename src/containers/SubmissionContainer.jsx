@@ -4,9 +4,8 @@ import Request from "../helpers/request";
 
 import Logo from "../components/Logo";
 import FixtureForm from "../forms/FixtureForm";
-import MatchForm from "../forms/MatchForm";
 import PersonForm from "../forms/PersonForm";
-import ScoreEventForm from "../forms/ScoreEventForm";
+import ResultForm from "../forms/ResultForm";
 import TeamForm from "../forms/TeamForm";
 import TournamentForm from "../forms/TournamentForm";
 import VenueForm from "../forms/VenueForm";
@@ -44,7 +43,11 @@ class SubmissionPage extends Component {
     let singular = this.getSingularOfCollection();
     let form;
     if (collection === "fixtures") {
-      form = <FixtureForm id={this.props.match.params.id} handlePost={this.handlePost} />;
+      if (this.props.match.params.itemid) {
+        form = <ResultForm id={this.props.match.params.id} />;
+      } else {
+        form = <FixtureForm id={this.props.match.params.id} />;
+      }
     }
     if (collection === "people") {
       form = <PersonForm handlePost={this.handlePost} />;

@@ -25,9 +25,12 @@ class TournamentTable extends Component {
 
     let tableRows = "No table for this tournament";
     if (this.state.table) {
-      tableRows = this.state.table.rows.map((row, index) => {
-        return <LeagueTableRow key={index} row={row} />;
-      });
+      tableRows = "There's a table but no rows";
+      if (this.state.table.rows) {
+        tableRows = this.state.table.rows.map((row, index) => {
+          return <LeagueTableRow key={index} row={row} />;
+        });
+      }
     }
 
     return (

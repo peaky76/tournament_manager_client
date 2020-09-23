@@ -9,7 +9,11 @@ import ScorersList from "../components/lists/ScorersList";
 const TournamentDisplay = ({ tournament }) => {
   const results = tournament.matches.filter((match) => match.completed);
   const fixtures = tournament.matches.filter((match) => !match.completed);
-  let resultsAddButton = <button className="button-add">Add</button>;
+  let resultsAddButton = (
+    <button className="button-add">
+      <Link to={"/tournaments/" + tournament.id + "/fixtures/edit"}>Add</Link>
+    </button>
+  );
   let fixturesAddButton = (
     <button className="button-add">
       <Link to={"/tournaments/" + tournament.id + "/fixtures/new"}>Add</Link>

@@ -50,8 +50,9 @@ class FixtureForm extends Component {
     };
 
     const request = new Request();
-    request.post("/api/team_matches", match);
-    // .then(() => (window.location = "/tournaments/" + this.props.id));
+    request
+      .post("/api/team_matches", match)
+      .then(() => (window.location = "/tournaments/" + this.props.id));
   }
 
   render() {
