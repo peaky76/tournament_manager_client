@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Request from "../helpers/request";
 import Logo from "../components/Logo";
-import ResultFormRow from "./ResultFormRow";
+import ResultFormSub from "./ResultFormSub";
 
 class ResultForm extends Component {
   constructor() {
@@ -62,7 +62,7 @@ class ResultForm extends Component {
     let matchNodes = null;
     if (this.state.matches) {
       matchNodes = this.state.matches.map((match) => {
-        return <ResultFormRow match={match} />;
+        return <ResultFormSub match={match} />;
       });
     }
     return (

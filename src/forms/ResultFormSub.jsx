@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import Request from "../helpers/request";
 
-class ResultFormRow extends Component {
+class ResultFormSub extends Component {
   constructor() {
     super();
     this.state = {
@@ -27,9 +28,8 @@ class ResultFormRow extends Component {
     };
 
     const request = new Request();
-    request
-      .post("/api/team_matches", match)
-      .then(() => (window.location = "/tournaments/" + this.props.id));
+    request.edit("/api/team_matches" + this.props.match.id, match);
+    // .then(() => (window.location = "/tournaments/" + this.props.id));
   }
 
   render() {
@@ -57,4 +57,4 @@ class ResultFormRow extends Component {
   }
 }
 
-export default ResultFormRow;
+export default ResultFormSub;
