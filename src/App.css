@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-header {
-  width: 100%;
+  width: 50%;
 }
 
 /* Homepage */
@@ -70,17 +70,17 @@ h1, h2, h3, h4, h5, h6 {
 
 #sidebar,
 #main {
-  min-height: 80%;
+  min-height: 60%;
 }
 
 #sidebar {
-  width: 20%;
+  width: 18%;
   background-color: lightgoldenrodyellow;
 }
 
 #main {
   width: 80%;
-  background-color: lightsalmon;
+  background-color: rgb(253, 165, 130);
 }
 
 #main > header {
@@ -98,14 +98,16 @@ h1, h2, h3, h4, h5, h6 {
 
 #content-wrapper > *:first-child {
   width: 100%;
-  height: 67%;
-  
+  height: 65%;
+  background-color: lightgoldenrodyellow;
+  border-top: solid black 0.1rem;
 }
 
 #content-wrapper > section {
   padding: 0;
-  /* background-color: palegreen; */
-  /* border: 0.125rem solid black; */
+  margin-top: 0.5rem;
+  background-color: rgb(219, 232, 245);
+  border-top: solid black 0.1rem;
 }
 
 /* Forms */
@@ -117,16 +119,16 @@ form {
 input,
 select {
   display: block;
-  margin-bottom: 1rem;
-  background-color: inherit;
-  border: 0;
+  margin-bottom: 5rem;
+  background-color: honeydew;
+  border: solid 0.01rem;
   font-size: 1rem;
 }
 
 .input-inline,
 #form-fixture-create > input {
   display: inline;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 input[type="number"] {
@@ -137,7 +139,8 @@ input[type="number"] {
 
 .display-list > li:hover {
   cursor: pointer;
-  background-color: grey;
+  border: solid salmon 0.01rem;
+  border-radius: 0.2rem;
 }
 
 /* League tables */
