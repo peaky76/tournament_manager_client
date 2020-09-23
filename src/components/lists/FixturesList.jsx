@@ -10,7 +10,7 @@ const FixturesList = ({ header, matches }) => {
   }
 
   return (
-    <section>
+    <section className="results-fixtures-lists">
       <h3>{header}</h3>
       <ul>{matchNodes}</ul>
     </section>

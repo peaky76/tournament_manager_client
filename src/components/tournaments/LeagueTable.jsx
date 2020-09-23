@@ -35,7 +35,7 @@ class TournamentTable extends Component {
 
   return (
     <section>
-    <div className="table-heading">{headings}</div>
+    <div className="league-table-heading">{headings}</div>
       <div className="table-row">{tableRows}</div>
   
     </section>
