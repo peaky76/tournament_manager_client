@@ -10,6 +10,7 @@ class FixtureForm extends Component {
       teams: [],
       homeTeamId: "",
       awayTeamId: "",
+      homeTeam: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,14 +33,26 @@ class FixtureForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    // const homeTeam = this.state.teams.find((team) => team.id === this.state.homeTeamId);
+    // const venueId = homeTeam.venue.id;
     const match = {
-      team1: this.state.team1,
-      team2: this.state.team2,
-      venue: {
-        id: this.state.venueId,
+      team1: {
+        id: this.state.homeTeamId,
+      },
+      team2: {
+        id: this.state.awayTeamId,
+      },
+      // venue: {
+      //   id: venueId,
+      // },
+      tournament: {
+        id: this.props.id,
       },
     };
-    this.props.handlePost(match);
+
+    const request = new Request();
+    request.post("/api/team_matches", match);
+    // .then(() => (window.location = "/tournaments/" + this.props.id));
   }
 
   render() {
