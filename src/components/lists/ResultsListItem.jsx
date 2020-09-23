@@ -1,6 +1,6 @@
 import React from "react";
-const ResultsListItem = () => {
-  return <li>Alpha Rovers 3 Beta Utd 2</li>;
+const ResultsListItem = ({match}) => {
+  return <li>{match.team1.name} {match.score1} - {match.team2.name} {match.score2}</li>;
 };
 
 export default ResultsListItem;

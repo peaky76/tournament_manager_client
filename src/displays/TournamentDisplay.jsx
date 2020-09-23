@@ -26,7 +26,7 @@ const TournamentDisplay = ({ tournament }) => {
         <div>{resultsAddButton}</div>
         <FixturesList header="Fixtures" matches={fixtures} />
         <div>{fixturesAddButton}</div>
-        <ScorersList header="Top Scorers" scorers={null} />
+        {/* <ScorersList header="Top Scorers" scorers={null} /> */}
       </div>
     </>
   );

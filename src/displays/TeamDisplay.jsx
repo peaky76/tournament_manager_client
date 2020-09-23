@@ -8,8 +8,8 @@ const TeamDisplay = ({ team }) => {
   let results,
     fixtures = null;
   if (team.matches) {
-    results = team.matches.filter((match) => match.isCompleted);
-    fixtures = team.matches.filter((match) => !match.isCompleted);
+    results = team.matches.filter((match) => match.Completed);
+    fixtures = team.matches.filter((match) => !match.Completed);
   }
   return (
     <>
