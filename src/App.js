@@ -6,6 +6,7 @@ import DisplayContainer from "./containers/DisplayContainer";
 import SubmissionContainer from "./containers/SubmissionContainer";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
+import ResultForm from "./forms/ResultForm";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/tournaments/:id/:collection/edit/" component={SubmissionContainer} />
+          <Route path="/tournaments/:id/:collection/edit" component={ResultForm} />
           <Route path="/tournaments/:id/:collection/new" component={SubmissionContainer} />
           <Route exact path="/:collection/new" component={SubmissionContainer} />
           <Route path="/:collection/:id" component={DisplayContainer} />

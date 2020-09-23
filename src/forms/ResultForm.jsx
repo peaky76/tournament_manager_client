@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Request from "../helpers/request";
+import Logo from "../components/Logo";
+import ResultFormRow from "./ResultFormRow";
 
-import TeamsDropdown from "../components/dropdowns/TeamsDropdown";
-
-class FixtureForm extends Component {
+class ResultForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -18,10 +18,12 @@ class FixtureForm extends Component {
 
   componentDidMount() {
     const request = new Request();
-    let rawData = null;
-
-    request.get("/api/tournaments/" + this.props.id).then((data) => {
-      this.setState({ matches: data });
+    request.get("/api/tournaments/" + this.props.match.params.id).then((data) => {
+      this.setState({
+        matches: data.matches.filter((match) => {
+          return match.completed;
+        }),
+      });
     });
   }
 
@@ -57,24 +59,24 @@ class FixtureForm extends Component {
   // }
 
   render() {
+    let matchNodes = null;
+    if (this.state.matches) {
+      matchNodes = this.state.matches.map((match) => {
+        return <ResultFormRow match={match} />;
+      });
+    }
     return (
-      <form id="form-fixture-create" className="form-create" onSubmit={this.handleSubmit}>
-        <TeamsDropdown
-          teams={this.state.teams}
-          defaultText="Home team..."
-          name="homeTeamId"
-          onChange={this.handleChange}
-        />
-        <TeamsDropdown
-          teams={this.state.teams}
-          defaultText="Away team..."
-          name="awayTeamId"
-          onChange={this.handleChange}
-        />
-        <button className="button-submit">Add fixture</button>
-      </form>
+      <div id="submission-page" className="page">
+        <section id="sidebar">
+          <Logo />
+        </section>
+        <section id="main">
+          <h2>Add results</h2>
+          {matchNodes}
+        </section>
+      </div>
     );
   }
 }
 
-export default FixtureForm;
+export default ResultForm;

@@ -1,16 +1,20 @@
-
 .App {
   text-align: center;
 }
 
 body {
-  font-family: 'Oxygen', sans-serif;
+  font-family: "Oxygen", sans-serif;
   background-image: url("/images/background/stadium-lights.jpg");
   background-size: 110%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Righteous', cursive;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Righteous", cursive;
 }
 
 #root {
@@ -118,6 +122,9 @@ form {
   width: 75%;
 }
 
+.result-submission {
+}
+
 input,
 select {
   display: block;
@@ -135,6 +142,11 @@ select {
 
 input[type="number"] {
   width: 2rem;
+}
+
+label {
+  display: inline-block;
+  width: 12rem;
 }
 
 /* Lists */

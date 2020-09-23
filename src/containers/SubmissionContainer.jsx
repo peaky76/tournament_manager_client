@@ -43,11 +43,7 @@ class SubmissionPage extends Component {
     let singular = this.getSingularOfCollection();
     let form;
     if (collection === "fixtures") {
-      if (this.props.match.params.itemid) {
-        form = <ResultForm id={this.props.match.params.id} />;
-      } else {
-        form = <FixtureForm id={this.props.match.params.id} />;
-      }
+      form = <FixtureForm id={this.props.match.params.id} />;
     }
     if (collection === "people") {
       form = <PersonForm handlePost={this.handlePost} />;
