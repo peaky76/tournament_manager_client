@@ -1,33 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
 
-class TeamsDropdown extends Component {
-  constructor() {
-    super();
-    this.handleChange = this.handleChange.bind(this);
+const TeamsDropdown = ({ teams, defaultText, name, onChange }) => {
+  let options = <option></option>;
+  if (teams) {
+    options = teams.map((team, index) => (
+      <option key={index} value={team.id}>
+        {team.name}
+      </option>
+    ));
   }
-
-  handleChange(event) {
-    this.props.onChange(event);
-  }
-
-  render() {
-    let options = <option></option>;
-    if (this.props.teams) {
-      options = this.props.teams.map((team, index) => (
-        <option key={index} value={team.id}>
-          {team.name}
-        </option>
-      ));
-    }
-    return (
-      <select name="teamId" onChange={this.handleChange}>
-        <option disabled selected value>
-          {this.props.defaultText}
-        </option>
-        {options}
-      </select>
-    );
-  }
-}
+  return (
+    <select className="input-inline" name={name} onChange={onChange}>
+      <option disabled selected value>
+        {defaultText}
+      </option>
+      {options}
+    </select>
+  );
+};
 
 export default TeamsDropdown;

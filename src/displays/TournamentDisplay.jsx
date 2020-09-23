@@ -12,7 +12,7 @@ const TournamentDisplay = ({ tournament }) => {
   let resultsAddButton = <button className="button-add">Add</button>;
   let fixturesAddButton = (
     <button className="button-add">
-      <Link to="/fixtures/new">Add</Link>
+      <Link to={"/tournaments/" + tournament.id + "/fixtures/new"}>Add</Link>
     </button>
   );
   return (

@@ -35,8 +35,9 @@ class SubmissionPage extends Component {
   handlePost(item) {
     const request = new Request();
     console.log(item);
-    request.post("/api/" + this.props.match.params.collection, item)
-    .then(() => (window.location = "/" + this.props.match.params.collection));
+    request
+      .post("/api/" + this.props.match.params.collection, item)
+      .then(() => (window.location = "/" + this.props.match.params.collection));
   }
 
   render() {
@@ -44,7 +45,7 @@ class SubmissionPage extends Component {
     let singular = this.getSingularOfCollection();
     let form;
     if (collection === "fixtures") {
-      form = <FixtureForm handlePost={this.handlePost} />;
+      form = <FixtureForm id={this.props.match.params.id} handlePost={this.handlePost} />;
     }
     if (collection === "people") {
       form = <PersonForm handlePost={this.handlePost} />;

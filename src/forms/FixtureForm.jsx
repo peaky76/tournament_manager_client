@@ -1,15 +1,27 @@
 import React, { Component } from "react";
+import Request from "../helpers/request";
 
 import TeamsDropdown from "../components/dropdowns/TeamsDropdown";
-// import VenuesDropdown from "../components/dropdowns/VenuesDropdown";
 
 class FixtureForm extends Component {
   constructor() {
     super();
     this.state = {
-      team1: "",
-      team2: "",
+      teams: [],
+      homeTeamId: "",
+      awayTeamId: "",
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    const request = new Request();
+    request.get("/api/tournaments/" + this.props.id + "/teams").then((data) =>
+      this.setState({
+        teams: data,
+      })
+    );
   }
 
   handleChange(event) {
@@ -33,8 +45,18 @@ class FixtureForm extends Component {
   render() {
     return (
       <form id="form-fixture-create" className="form-create" onSubmit={this.handleSubmit}>
-        <TeamsDropdown defaultText="Home team..." />
-        <TeamsDropdown defaultText="Away team..." />
+        <TeamsDropdown
+          teams={this.state.teams}
+          defaultText="Home team..."
+          name="homeTeamId"
+          onChange={this.handleChange}
+        />
+        <TeamsDropdown
+          teams={this.state.teams}
+          defaultText="Away team..."
+          name="awayTeamId"
+          onChange={this.handleChange}
+        />
         <button className="button-submit">Add fixture</button>
       </form>
     );
