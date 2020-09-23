@@ -21,7 +21,7 @@ const TournamentDisplay = ({ tournament }) => {
         <h1>{tournament.name}</h1>
       </header>
       <div id="content-wrapper">
-        <LeagueTable />
+        <LeagueTable id={tournament.id} />
         <ResultsList header="Results" matches={results} />
         <div>{resultsAddButton}</div>
         <FixturesList header="Fixtures" matches={fixtures} />
