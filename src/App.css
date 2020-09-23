@@ -146,11 +146,17 @@ input[type="number"] {
 /* League tables */
 
 .league-table-column:first-child {
-  width: 10rem;
+  width: 15rem;
 }
 
 .league-table-column {
   display: inline-block;
   width: 2rem;
   font-weight: bold;
+  margin-left: 0.2rem;
+}
+
+.table-heading {
+  background-color: rgb(49, 39, 39);
+  color: salmon;
 }
