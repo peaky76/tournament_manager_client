@@ -1,5 +1,6 @@
-import React from "react";
-import Request from "../helpers/request";
+import React, { Component } from "react";
+import Request from "../../helpers/request";
+import LeagueTableRow from "./LeagueTableRow";
 
 class TournamentTable extends Component {
   constructor () {
@@ -17,11 +18,29 @@ class TournamentTable extends Component {
     }));
   }
 
+
   render() {
   const columnTitles = ["Team", "W", "D", "L", "F", "A", "Pts"];
   const headings = columnTitles.map((col) => <span className="league-table-column">{col}</span>);
   
-  return (<section>{headings}</section>);
+  let tableRows = "No table for this tournament";
+  if(this.state.table) {
+    tableRows = this.state.table.rows.map((row, index) => {
+      return <LeagueTableRow key={index} row={row}  />;
+    });
+
+
+  // tableRows = this.state.table.rows.map((col) => <span className="league-table-column">{col}</span>);
+}
+
+  return (
+    <section>
+    <div>{headings}</div>
+      {tableRows}
+  
+    </section>
+    
+    );
   }
 
 };
