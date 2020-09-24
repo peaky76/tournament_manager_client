@@ -155,7 +155,7 @@ label {
 
 .display-list > li:hover {
   cursor: pointer;
-  border: solid #7D8CCA 0.1rem;
+  border: solid #7D8CCA 0.09rem;
   border-radius: 0.2rem;
 }
 
