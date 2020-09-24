@@ -22,10 +22,12 @@ const TournamentDisplay = ({ tournament }) => {
       </header>
       <div id="content-wrapper">
         <LeagueTable />
-        <ResultsList header="Results" matches={results} />
+        
+        <ResultsList header="Results" matches={results}/>
         <div>{resultsAddButton}</div>
-        <FixturesList header="Fixtures" matches={fixtures} />
+        <FixturesList header="Fixtures" matches={fixtures}/>
         <div>{fixturesAddButton}</div>
+        
         {/* <ScorersList header="Top Scorers" scorers={null} /> */}
       </div>
     </>

@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 10%;
   display: flex;
   background-color: whitesmoke;
-  border: 1px solid black;
+  border: 1px solid rgb(51, 51, 50);
 }
 
 .page-header {
@@ -111,7 +111,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.2rem;
   /* background-color: #A0D2DB; */
   border-top: solid black 0.1rem;
-  
 }
 
 /* Forms */
@@ -165,5 +164,9 @@ input[type="number"] {
   background-color: rgb(10, 10, 10);
   color: #726DA8;
 }
+/* 
+.results-fixtures-lists {
+  display: inline-block;
+} */
 
 
