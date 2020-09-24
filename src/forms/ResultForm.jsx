@@ -21,7 +21,7 @@ class ResultForm extends Component {
     request.get("/api/tournaments/" + this.props.match.params.id).then((data) => {
       this.setState({
         matches: data.matches.filter((match) => {
-          return match.completed;
+          return !match.completed;
         }),
       });
     });
@@ -62,7 +62,7 @@ class ResultForm extends Component {
     let matchNodes = null;
     if (this.state.matches) {
       matchNodes = this.state.matches.map((match) => {
-        return <ResultFormSub match={match} />;
+        return <ResultFormSub tournamentId={this.props.match.params.id} match={match} />;
       });
     }
     return (

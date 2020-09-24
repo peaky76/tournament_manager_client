@@ -23,13 +23,26 @@ class ResultFormSub extends Component {
 
     const match = {
       id: this.props.match.id,
+      team1: {
+        id: this.props.match.team1.id,
+      },
+      team2: {
+        id: this.props.match.team2.id,
+      },
       score1: this.state.score1,
       score2: this.state.score2,
+      venue: {
+        id: this.props.match.venue.id,
+      },
+      tournament: {
+        id: this.props.tournamentId,
+      },
     };
 
     const request = new Request();
-    request.edit("/api/team_matches" + this.props.match.id, match);
-    // .then(() => (window.location = "/tournaments/" + this.props.id));
+    request
+      .edit("/api/team_matches/" + this.props.match.id, match)
+      .then(() => (window.location = "/tournaments/" + this.props.id));
   }
 
   render() {
