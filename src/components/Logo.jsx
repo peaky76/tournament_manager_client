@@ -5,7 +5,9 @@ const Logo = () => {
   return (
     <Link to="/">
       <div id="logo">
-        <h1 id="logo-txt">Sportify</h1>
+        <div id="logo-img">
+          <h1 id="logo-txt">Sportify</h1>
+        </div>
       </div>
     </Link>
   );

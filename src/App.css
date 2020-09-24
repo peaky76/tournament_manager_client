@@ -30,15 +30,14 @@ h6 {
   border: 1px solid black;
 }
 
-.page-header {
-  width: 50%;
-}
-
 /* Homepage */
 #homepage {
+  text-align: center;
 }
 
 #homepage-header {
+  width: 67%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,7 +48,13 @@ h6 {
   margin: auto;
   height: 9rem;
   width: 9rem;
+  padding: 1rem;
   text-align: center;
+}
+
+#logo-img {
+  height: 100%;
+  width: 100%;
   background-image: url("/images/soccer_icons/png/001-trophy.png");
   background-size: contain;
   display: flex;
@@ -58,7 +63,7 @@ h6 {
   justify-content: center;
 }
 
-a > #logo > h1 {
+a > #logo > #logo-img > h1 {
   color: black;
   font-size: 2em;
   text-transform: uppercase;
@@ -87,10 +92,6 @@ a > #logo:hover {
   width: 80%;
   background-color: #7d8cca;
   /* background-color: #726DA8; */
-}
-
-#main > header {
-  width: 100%;
 }
 
 #content-wrapper {
