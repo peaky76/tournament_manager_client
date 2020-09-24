@@ -47,6 +47,7 @@ class FixtureForm extends Component {
       tournament: {
         id: this.props.id,
       },
+      completed: false,
     };
 
     const request = new Request();

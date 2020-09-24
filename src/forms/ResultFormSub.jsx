@@ -37,6 +37,7 @@ class ResultFormSub extends Component {
       tournament: {
         id: this.props.tournamentId,
       },
+      completed: true,
     };
 
     const request = new Request();
