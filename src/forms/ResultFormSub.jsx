@@ -42,7 +42,7 @@ class ResultFormSub extends Component {
     const request = new Request();
     request
       .edit("/api/team_matches/" + this.props.match.id, match)
-      .then(() => (window.location = "/tournaments/" + this.props.id));
+      .then(() => (window.location = "/tournaments/" + this.props.tournamentId));
   }
 
   render() {
