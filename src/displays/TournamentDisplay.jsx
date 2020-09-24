@@ -30,11 +30,8 @@ const TournamentDisplay = ({ tournament }) => {
       </header>
       <div id="content-wrapper">
         <LeagueTable id={tournament.id} />
-        <ResultsList header="Results" matches={results} />
-        <div>{resultsAddButton}</div>
-        <FixturesList header="Fixtures" matches={fixtures} />
-        <div>{fixturesAddButton}</div>
-        {/* <ScorersList header="Top Scorers" scorers={null} /> */}
+        <ResultsList header="Results" button={resultsAddButton} matches={results} />
+        <FixturesList header="Fixtures" button={fixturesAddButton} matches={fixtures} />
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import ResultsListItem from "./ResultsListItem";
 
-const ResultsList = ({ header, matches }) => {
+const ResultsList = ({ header, button, matches }) => {
   let matchNodes = "No matches played.";
   if (matches) {
     matchNodes = matches.map((match, index) => {
@@ -12,6 +12,7 @@ const ResultsList = ({ header, matches }) => {
     <section className="results-fixtures-lists">
       <h3>{header}</h3>
       <ul>{matchNodes}</ul>
+      {button}
     </section>
   );
 };
