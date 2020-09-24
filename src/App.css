@@ -46,27 +46,26 @@ h6 {
 
 #logo {
   position: relative;
+  margin: auto;
   height: 9rem;
   width: 9rem;
-}
-
-#logo > * {
-  height: 100%;
-  width: 100%;
-}
-
-#logo-img {
-  object-fit: contain;
-}
-
-#logo-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
+  text-align: center;
+  background-image: url("/images/soccer_icons/png/001-trophy.png");
+  background-size: contain;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+a > #logo > h1 {
+  color: black;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+a > #logo:hover {
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
 }
 
 /* Other pages */

@@ -8,12 +8,7 @@ class ResultForm extends Component {
     super();
     this.state = {
       matches: [],
-      // teams: [],
-      // homeTeamId: "",
-      // awayTeamId: "",
     };
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -26,37 +21,6 @@ class ResultForm extends Component {
       });
     });
   }
-
-  // handleChange(event) {
-  //   this.setState({
-  //     [event.target.name]: event.target.value,
-  //   });
-  // }
-
-  // handleSubmit(event) {
-  //   event.preventDefault();
-  //   const homeTeam = this.state.teams.find((team) => team.id === parseInt(this.state.homeTeamId));
-  //   const venueId = homeTeam.venue.id;
-  //   const match = {
-  //     team1: {
-  //       id: this.state.homeTeamId,
-  //     },
-  //     team2: {
-  //       id: this.state.awayTeamId,
-  //     },
-  //     venue: {
-  //       id: venueId,
-  //     },
-  //     tournament: {
-  //       id: this.props.id,
-  //     },
-  //   };
-
-  //   const request = new Request();
-  //   request
-  //     .post("/api/team_matches", match)
-  //     .then(() => (window.location = "/tournaments/" + this.props.id));
-  // }
 
   render() {
     let matchNodes = null;
